@@ -1,0 +1,15 @@
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaBussines.dll.config
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaBussines.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaBussines.pdb
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaData.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaEntity.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\EntityFramework.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaData.pdb
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaData.dll.config
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\ClinicaEntity.pdb
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\EntityFramework.xml
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\obj\Debug\ClinicaBussines.csprojResolveAssemblyReference.cache
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\obj\Debug\ClinicaBussines.dll
+D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaBussines\obj\Debug\ClinicaBussines.pdb
