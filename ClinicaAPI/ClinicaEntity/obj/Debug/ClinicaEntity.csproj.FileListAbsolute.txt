@@ -1,4 +1,0 @@
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaEntity\bin\Debug\ClinicaEntity.dll
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaEntity\bin\Debug\ClinicaEntity.pdb
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaEntity\obj\Debug\ClinicaEntity.dll
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaEntity\obj\Debug\ClinicaEntity.pdb

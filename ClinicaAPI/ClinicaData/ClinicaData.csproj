@@ -47,8 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\201708282136461_Initial.cs" />
+    <Compile Include="Migrations\201708282136461_Initial.Designer.cs">
+      <DependentUpon>201708282136461_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +64,11 @@
       <Project>{AB76838D-24DF-473A-9B98-A7E8CD00A18A}</Project>
       <Name>ClinicaEntity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708282136461_Initial.resx">
+      <DependentUpon>201708282136461_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
