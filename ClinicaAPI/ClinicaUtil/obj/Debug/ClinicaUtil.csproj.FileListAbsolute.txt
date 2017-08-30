@@ -1,5 +1,0 @@
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaUtil\bin\Debug\ClinicaUtil.dll
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaUtil\bin\Debug\ClinicaUtil.pdb
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaUtil\obj\Debug\ClinicaUtil.csprojResolveAssemblyReference.cache
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaUtil\obj\Debug\ClinicaUtil.dll
-D:\WorkSpaceVisual\TP3_Proyecto\ClinicaAPI\ClinicaUtil\obj\Debug\ClinicaUtil.pdb
