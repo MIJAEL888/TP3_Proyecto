@@ -149,18 +149,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cita.cs" />
+    <Compile Include="Models\Entities\Cita.cs" />
     <Compile Include="Models\CitaViewModel.cs" />
-    <Compile Include="Models\Doctor.cs" />
-    <Compile Include="Models\Estados.cs" />
+    <Compile Include="Models\Entities\Doctor.cs" />
+    <Compile Include="Models\Entities\Estados.cs" />
     <Compile Include="Models\InListTurnoModel.cs" />
     <Compile Include="Models\InReservaTurnoModel.cs" />
     <Compile Include="Models\OutListaTurnosModel.cs" />
-    <Compile Include="Models\Paciente.cs" />
-    <Compile Include="Models\Sala.cs" />
-    <Compile Include="Models\TipoAtencion.cs" />
-    <Compile Include="Models\Turno.cs" />
-    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Entities\Paciente.cs" />
+    <Compile Include="Models\Entities\Sala.cs" />
+    <Compile Include="Models\Entities\TipoAtencion.cs" />
+    <Compile Include="Models\Entities\Turno.cs" />
+    <Compile Include="Models\Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
