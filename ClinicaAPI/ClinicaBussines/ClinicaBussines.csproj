@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CitaBl.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DoctorBl.cs" />
     <Compile Include="PacienteBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
