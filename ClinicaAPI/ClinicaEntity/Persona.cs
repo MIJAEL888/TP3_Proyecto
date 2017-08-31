@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 
 namespace ClinicaEntity
 {
-    [Table("Diagnostico")]
-    public class Diagnostico
+    [Table("Persona")]
+    public class Persona
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-
-        [ForeignKey("Empleado")]
-        public int IdEmpleado { get; set; }
-        public Empleado Empleado { get; set; }
+        public string Apellido { get; set; }
+        public string TipoDocumento { get; set; }
+        public string NumeroDocumento { get; set; }
+        public string Sexo { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public string Correo { get; set; }
     }
 }

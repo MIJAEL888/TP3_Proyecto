@@ -25,7 +25,7 @@ namespace ClinicaMVC.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:60546/Api/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:57010/Api/")]
         public string UriApi {
             get {
                 return ((string)(this["UriApi"]));

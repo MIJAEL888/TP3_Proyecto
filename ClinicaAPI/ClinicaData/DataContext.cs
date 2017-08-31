@@ -17,6 +17,22 @@ namespace ClinicaData
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Turno> Turnos { get; set; }
         public DbSet<Cita> Citas { get; set; }
+        public DbSet<Area> Areas { get; set; }
+        public DbSet<Cama> Camas { get; set; }
+        public DbSet<Diagnostico> Diagnosticos { get; set; }
+        public DbSet<Empleado> Empleados { get; set; }
+        public DbSet<Especialidad> Especialidades { get; set; }
+        public DbSet<FactorRiesgo> FactorRiesgos { get; set; }
+        public DbSet<FactorRiesgoCriticidad> FactorRiesgoCriticidades { get; set; }
+        public DbSet<HistoriaClinica> HistoriaClinicas { get; set; }
+        public DbSet<IngresoSalidaPaciente> IngresoSalidaPacientes { get; set; }
+        public DbSet<Inmueble> Inmuebles { get; set; }
+        public DbSet<NivelCriticidad> NivelCriticidades { get; set; }
+        public DbSet<Persona> Personas { get; set; }
+        public DbSet<RegistroEnfermeria> RegistroEnfermerias { get; set; }
+        public DbSet<RegistroEnfermeriaDetalle> RegistroEnfermeriaDetalles { get; set; }
+        public DbSet<Solicitud> Solicituds{ get; set; }
+        public DbSet<Tratamiento> Tratamientos { get; set; }
 
         public DataContext(): base("ClinicaDb") 
         {

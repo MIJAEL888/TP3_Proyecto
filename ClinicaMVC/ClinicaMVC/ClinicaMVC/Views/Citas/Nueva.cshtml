@@ -1,0 +1,83 @@
+﻿@model ClinicaMVC.Models.CitaViewModel
+
+@{
+    ViewBag.Title = "Gestion de Citas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header">
+    <h2>Mis citas</h2>
+</div>
+<form class="form-horizontal" id="formCita">
+    <fieldset>
+        <legend>Registre su nueva Cita</legend>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Desde"
+                           class="col-lg-2 control-label">Desde</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="Desde" placeholder="Desde" name="Desde">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="TipoAtenciones" class="col-lg-2 control-label">Tipo de Atencion</label>
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(m => m.TipoAtenciones, new SelectList(Model.TipoAtenciones, "Id", "Tipo"), "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Doctores" class="col-lg-2 control-label">Doctor</label>
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(m => m.Doctores, new SelectList(Model.Doctores, "Id", "Nombre"), "", new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Hasta" class="col-lg-2 control-label">Hasta</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="Hasta"
+                               id="Hasta" placeholder="Hasta">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Pacientes" class="col-lg-2 control-label">Paciente</label>
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(m => m.Pacientes, new SelectList(Model.Pacientes, "Id", "Nombre"), "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary" style="margin-top: 20PX;float: right;margin-right: 50px;">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </fieldset>
+</form>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div id="listTurnos"></div>
+    </div>
+</div>
+
+<div id="modalReserva" class="modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Información: </h4>
+            </div>
+            <div class="modal-body">
+                <p id="modalReservaMensaje"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="@Url.Action("Index", "Citas")" class="btn btn-primary" onclick="">Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+

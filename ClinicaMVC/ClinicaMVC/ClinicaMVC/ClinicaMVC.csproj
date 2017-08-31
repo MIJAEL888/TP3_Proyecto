@@ -311,6 +311,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Citas\Index.cshtml" />
+    <Content Include="Views\Citas\Nueva.cshtml" />
+    <Content Include="Views\Citas\ListTurnos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 
 namespace ClinicaEntity
 {
-    [Table("Diagnostico")]
-    public class Diagnostico
+    [Table("FactorRiesgo")]
+    public class FactorRiesgo
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-
-        [ForeignKey("Empleado")]
-        public int IdEmpleado { get; set; }
-        public Empleado Empleado { get; set; }
+        public int ValorMinimo { get; set; }
+        public int ValorMaximo { get; set; }
+        public string Codigo { get; set; }
+        public string Unidades { get; set; }
+        public string Grupo { get; set; }
+        public string Padre { get; set; }
     }
 }

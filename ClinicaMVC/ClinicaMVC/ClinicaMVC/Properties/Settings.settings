@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="UriApi" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:60546/Api/</Value>
+      <Value Profile="(Default)">http://localhost:57010/Api/</Value>
     </Setting>
   </Settings>
 </SettingsFile>

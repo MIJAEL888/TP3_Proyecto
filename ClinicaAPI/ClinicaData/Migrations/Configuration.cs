@@ -270,6 +270,26 @@ namespace ClinicaData.Migrations
                     Observacion = "Cita de prueba"
                 }
             );
+
+            context.Diagnosticos.AddOrUpdate(d => d.Id,
+                new Diagnostico
+                {
+
+                }
+            );
+            context.Diagnosticos.AddOrUpdate(d => d.Id,
+                new Diagnostico
+                {
+
+                }
+            );
+
+            context.Diagnosticos.AddOrUpdate(d => d.Id,
+                new Diagnostico
+                {
+                   
+                }
+            );
         }
     }
 }
