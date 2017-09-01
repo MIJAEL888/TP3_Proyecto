@@ -52,6 +52,18 @@
     <Compile Include="Migrations\201708282136461_Initial.Designer.cs">
       <DependentUpon>201708282136461_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709010027081_AddSolicitud.cs" />
+    <Compile Include="Migrations\201709010027081_AddSolicitud.Designer.cs">
+      <DependentUpon>201709010027081_AddSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709010104247_CorrecionEstados.cs" />
+    <Compile Include="Migrations\201709010104247_CorrecionEstados.Designer.cs">
+      <DependentUpon>201709010104247_CorrecionEstados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709010139144_AddPersonEmpleado.cs" />
+    <Compile Include="Migrations\201709010139144_AddPersonEmpleado.Designer.cs">
+      <DependentUpon>201709010139144_AddPersonEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,10 +76,23 @@
       <Project>{AB76838D-24DF-473A-9B98-A7E8CD00A18A}</Project>
       <Name>ClinicaEntity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClinicaUtil\ClinicaUtil.csproj">
+      <Project>{BACC35DB-7003-4586-A649-659257F19567}</Project>
+      <Name>ClinicaUtil</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708282136461_Initial.resx">
       <DependentUpon>201708282136461_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709010027081_AddSolicitud.resx">
+      <DependentUpon>201709010027081_AddSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709010104247_CorrecionEstados.resx">
+      <DependentUpon>201709010104247_CorrecionEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709010139144_AddPersonEmpleado.resx">
+      <DependentUpon>201709010139144_AddPersonEmpleado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

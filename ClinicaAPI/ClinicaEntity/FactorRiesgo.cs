@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClinicaUtil;
 
 namespace ClinicaEntity
 {
@@ -21,6 +22,7 @@ namespace ClinicaEntity
         public string Codigo { get; set; }
         public string Unidades { get; set; }
         public string Grupo { get; set; }
-        public string Padre { get; set; }
+        public TipoUnidades CodUnidades { get; set; }
+        public int Padre { get; set; }
     }
 }

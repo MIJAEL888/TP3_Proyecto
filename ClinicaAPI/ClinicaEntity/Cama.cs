@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicaUtil;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,7 +22,7 @@ namespace ClinicaEntity
         public string Tipo { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public string Estado { get; set; }
+        public EstadoCama Estado { get; set; }
 
         [ForeignKey("Inmueble")]
         public int IdInmueble { get; set; }

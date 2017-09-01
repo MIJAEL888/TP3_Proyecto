@@ -27,5 +27,8 @@ namespace ClinicaEntity
         public int IdArea{ get; set; }
         public Area Area{ get; set; }
 
+        [ForeignKey("Persona")]
+        public int IdPersona { get; set; }
+        public Persona Persona { get; set; }
     }
 }

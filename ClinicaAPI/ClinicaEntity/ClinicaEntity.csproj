@@ -52,7 +52,6 @@
     <Compile Include="NivelCriticidad.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Doctor.cs" />
-    <Compile Include="Estados.cs" />
     <Compile Include="HistoriaClinica.cs" />
     <Compile Include="IngresoSalidaPaciente.cs" />
     <Compile Include="Inmueble.cs" />
@@ -66,6 +65,12 @@
     <Compile Include="Tratamiento.cs" />
     <Compile Include="Turno.cs" />
     <Compile Include="Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicaUtil\ClinicaUtil.csproj">
+      <Project>{BACC35DB-7003-4586-A649-659257F19567}</Project>
+      <Name>ClinicaUtil</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,7 +31,7 @@ namespace ClinicaData
         public DbSet<Persona> Personas { get; set; }
         public DbSet<RegistroEnfermeria> RegistroEnfermerias { get; set; }
         public DbSet<RegistroEnfermeriaDetalle> RegistroEnfermeriaDetalles { get; set; }
-        public DbSet<Solicitud> Solicituds{ get; set; }
+        public DbSet<Solicitud> Solicitudes { get; set; }
         public DbSet<Tratamiento> Tratamientos { get; set; }
 
         public DataContext(): base("ClinicaDb") 

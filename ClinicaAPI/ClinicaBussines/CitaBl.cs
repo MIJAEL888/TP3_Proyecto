@@ -1,5 +1,6 @@
 ﻿using ClinicaData;
 using ClinicaEntity;
+using ClinicaUtil;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;

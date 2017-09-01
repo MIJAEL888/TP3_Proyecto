@@ -51,6 +51,7 @@
     <Compile Include="DoctorBl.cs" />
     <Compile Include="PacienteBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudBl.cs" />
     <Compile Include="TipoAtencionBl.cs" />
     <Compile Include="TurnoBl.cs" />
     <Compile Include="UsuarioBl.cs" />
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\ClinicaEntity\ClinicaEntity.csproj">
       <Project>{AB76838D-24DF-473A-9B98-A7E8CD00A18A}</Project>
       <Name>ClinicaEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClinicaUtil\ClinicaUtil.csproj">
+      <Project>{BACC35DB-7003-4586-A649-659257F19567}</Project>
+      <Name>ClinicaUtil</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
