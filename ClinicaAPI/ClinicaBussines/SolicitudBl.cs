@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClinicaData;
 using ClinicaEntity;
+using ClinicaUtil;
 
 namespace ClinicaBussines
 {
@@ -27,9 +28,12 @@ namespace ClinicaBussines
                                 join p in context.HistoriaClinicas on c.IdHistoriaClinica equals p.Id
                                 join e in context.Empleados on c.IdEmpleado equals e.Id
                                 join u in context.Personas on e.IdPersona equals u.Id
+                                join pa in context.Pacientes on p.IdPaciente equals pa.Id
                               select c)
                     .Include(c => c.HistoriaClinica)
                     .Include(c => c.Empleado)
+                    .Include(e => e.Empleado.Persona)
+                    .Include(e => e.HistoriaClinica.Paciente)
                     .Where(c => (int) c.Estado == idEstado)
                     .ToList();
 
@@ -41,31 +45,44 @@ namespace ClinicaBussines
         {
             using (var context = new DataContext())
             {
-                var citaDb = context.Solicitudes.Find(solicitud.Id);
-                if (citaDb != null)
+                var solicitudDb = context.Solicitudes.Find(solicitud.Id);
+                if (solicitudDb != null)
                 {
-                    citaDb.Estado = solicitud.Estado;
+                    solicitudDb.Estado = solicitud.Estado;
                     context.SaveChanges();
                 }
             }
         }
 
-        //public void Anular(int idCita)
-        //{
-        //    using (var context = new DataContext())
-        //    {
-        //        var citaDb = context.Citas.Find(idCita);
-        //        if (citaDb != null)
-        //        {
-        //            var turnoDb = context.Turnos.Find(citaDb.IdTurno);
-        //            if (turnoDb != null)
-        //            {
-        //                turnoDb.EstadoTurno = EstadoTurno.Libre;
-        //            }
-        //            citaDb.EstadoCita = EstadoCita.Anulado;
-        //            context.SaveChanges();
-        //        }
-        //    }
-        //}
+        public void Aprobar(int idSolicitud, int idCama)
+        {
+            using (var context = new DataContext())
+            {
+                var solicitudDb = context.Solicitudes.Find(idSolicitud);
+                if (solicitudDb != null)
+                {
+                    var camaDb = context.Camas.Find(idCama);
+                    if (camaDb != null)
+                    {
+                        camaDb.Estado = EstadoCama.Ocupado;
+                    }
+                    solicitudDb.Estado = EstadoSolicitud.Aprobado;
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public void DesAprobar(int idSolicitud)
+        {
+            using (var context = new DataContext())
+            {
+                var solicitudDb = context.Solicitudes.Find(idSolicitud);
+                if (solicitudDb != null)
+                {
+                    solicitudDb.Estado = EstadoSolicitud.Rechazado;
+                    context.SaveChanges();
+                }
+            }
+        }
     }
 }

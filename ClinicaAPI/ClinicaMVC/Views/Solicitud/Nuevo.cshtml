@@ -1,0 +1,13 @@
+﻿@using ClinicaUtil
+@model ClinicaMVC.Models.SolicitudViewModel
+
+@if (Model.Camas.Count > 0)
+{
+    
+    <p>Seleccione la cama que sera asignada: </p>
+    @Html.DropDownListFor(model => model.idCama,new SelectList(Model.Camas, "Id", "Descripcion"), "-- Seleccione la Cama --")
+}
+else
+{
+    <p>Lo sentimos no existen camas disponibles...</p>
+}
