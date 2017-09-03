@@ -18,10 +18,10 @@
     });
 
     $.validator.addMethod("validCustomer", function (value, element) {
-        return value != '';
+        return value !== "";
     }, "Por favor seleciona una opcion.");
     $.validator.addMethod("requerido", function (value, element) {
-        return value != '';
+        return value !== "";
     }, "Por favor ingrese una fecha valida.");
 
     $("#formCita").validate({
@@ -133,4 +133,8 @@ function reservarCita(idTurno) {
             $("#modalReservaMensaje").text("Hubo un problema durante el proceso.");
             $("#modalReserva").modal('show');
         });
+}
+
+function closeModal(id) {
+    $(id).modal('hide');
 }

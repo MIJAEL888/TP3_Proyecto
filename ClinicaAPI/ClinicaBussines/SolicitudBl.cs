@@ -25,15 +25,13 @@ namespace ClinicaBussines
             using (var context = new DataContext())
             {
                 var result = (from c in context.Solicitudes
-                                join p in context.HistoriaClinicas on c.IdHistoriaClinica equals p.Id
+                                join h in context.HistoriaClinicas on c.IdHistoriaClinica equals h.Id
+                                join pa in context.Pacientes on h.IdPaciente equals pa.Id
                                 join e in context.Empleados on c.IdEmpleado equals e.Id
-                                join u in context.Personas on e.IdPersona equals u.Id
-                                join pa in context.Pacientes on p.IdPaciente equals pa.Id
+                                join p in context.Personas on e.IdPersona equals p.Id
                               select c)
-                    .Include(c => c.HistoriaClinica)
-                    .Include(c => c.Empleado)
-                    .Include(e => e.Empleado.Persona)
-                    .Include(e => e.HistoriaClinica.Paciente)
+                    .Include(c => c.HistoriaClinica).Include(c => c.HistoriaClinica.Paciente)
+                    .Include(c => c.Empleado).Include(e => e.Empleado.Persona)
                     .Where(c => (int) c.Estado == idEstado)
                     .ToList();
 

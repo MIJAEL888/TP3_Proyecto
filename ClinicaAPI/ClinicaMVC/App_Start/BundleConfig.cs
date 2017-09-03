@@ -29,11 +29,17 @@ namespace ClinicaMVC
                 "~/Scripts/respond.js",
                 "~/scripts/toastr.js",
                 "~/Scripts/jquery.validate*",
+                "~/scripts/app.js",
+                "~/scripts/adminlte.js",
                 "~/scripts/general.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/font-awesome.css",
+                      "~/Content/Ionicons/css/ionicons.css",
+                      "~/Content/AdminLTE.css",
+                      "~/Content/skins/skin-green.css" )); //"~/Content/site.css"
+                     
         }
     }
 }
