@@ -63,6 +63,15 @@ namespace ClinicaBussines
                     if (camaDb != null)
                     {
                         camaDb.Estado = EstadoCama.Ocupado;
+
+                        IngresoSalidaPaciente ingresoSalidaPaciente = new IngresoSalidaPaciente();
+                        ingresoSalidaPaciente.IdCama = camaDb.Id;
+                        ingresoSalidaPaciente.IdSolicitud = solicitudDb.Id;
+                        ingresoSalidaPaciente.Estado = EstadoRegistroIngreso.Activado;
+                        ingresoSalidaPaciente.FechaIngreso = DateTime.Now;
+                        ingresoSalidaPaciente.Motivo = "Aprobacion de solicitud de ingreso.";
+                        ingresoSalidaPaciente.FechaSalida =  DateTime.Now;
+                        context.IngresoSalidaPacientes.Add(ingresoSalidaPaciente);
                     }
                     solicitudDb.Estado = EstadoSolicitud.Aprobado;
                     context.SaveChanges();

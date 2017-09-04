@@ -17,6 +17,7 @@
         <th>Paciente</th>
         <th>HC</th>
         <th>Estado</th>
+        <th>Observacion</th>
         <th>Accion</th>
     </tr>
     </thead>
@@ -30,6 +31,7 @@
             <td>@item.Empleado.Persona.Nombre</td>
             <td>@item.HistoriaClinica.Paciente.Nombre</td>
             <td>@item.HistoriaClinica.Id</td>
+            <td>@item.Estado</td>
             <td>@item.HistoriaClinica.Observacion</td>
             <td>
                 @if (item.Estado == EstadoSolicitud.Pendiente)

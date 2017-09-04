@@ -17,6 +17,8 @@ namespace ClinicaEntity
         public DateTime FechaRegistro { get; set; }
         public string Observacion { get; set; }
         public string GrupoSangineo { get; set; }
+        public string Peso { get; set; }
+        public string Talla { get; set; }
 
         [ForeignKey("Diagnostico")]
         public int IdDiagnostico { get; set; }
@@ -30,5 +32,8 @@ namespace ClinicaEntity
         public int IdPaciente { get; set; }
         public Paciente Paciente { get; set; }
 
+        [ForeignKey("NivelCriticidad")]
+        public int IdNivelCriticidad { get; set; }
+        public NivelCriticidad NivelCriticidad { get; set; }
     }
 }

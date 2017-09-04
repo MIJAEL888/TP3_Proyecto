@@ -535,7 +535,10 @@ namespace ClinicaData.Migrations
                     IdPaciente = 1,
                     FechaRegistro = DateTime.Now,
                     Observacion = "Observaciones de la historia clinica 1",
-                    GrupoSangineo = "A+"
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 1
                 },
                 new HistoriaClinica
                 {
@@ -545,7 +548,10 @@ namespace ClinicaData.Migrations
                     IdPaciente = 2,
                     FechaRegistro = DateTime.Now,
                     Observacion = "Observaciones de la historia clinica 1",
-                    GrupoSangineo = "A+"
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 2
                 },
                 new HistoriaClinica
                 {
@@ -555,7 +561,10 @@ namespace ClinicaData.Migrations
                     IdPaciente = 3,
                     FechaRegistro = DateTime.Now,
                     Observacion = "Observaciones de la historia clinica 1",
-                    GrupoSangineo = "A+"
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 3
                 },
                 new HistoriaClinica
                 {
@@ -565,7 +574,10 @@ namespace ClinicaData.Migrations
                     IdPaciente = 4,
                     FechaRegistro = DateTime.Now,
                     Observacion = "Observaciones de la historia clinica 1",
-                    GrupoSangineo = "A+"
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 3
                 },
                 new HistoriaClinica
                 {
@@ -575,7 +587,10 @@ namespace ClinicaData.Migrations
                     IdPaciente = 5,
                     FechaRegistro = DateTime.Now,
                     Observacion = "Observaciones de la historia clinica 1",
-                    GrupoSangineo = "A+"
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 2
                 }
             );
 

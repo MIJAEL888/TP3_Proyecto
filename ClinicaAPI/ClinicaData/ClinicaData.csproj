@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201709010139144_AddPersonEmpleado.Designer.cs">
       <DependentUpon>201709010139144_AddPersonEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709032239240_AddStateRegistroIngreso.cs" />
+    <Compile Include="Migrations\201709032239240_AddStateRegistroIngreso.Designer.cs">
+      <DependentUpon>201709032239240_AddStateRegistroIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709040525531_AddCriticidadHistoria.cs" />
+    <Compile Include="Migrations\201709040525531_AddCriticidadHistoria.Designer.cs">
+      <DependentUpon>201709040525531_AddCriticidadHistoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709010139144_AddPersonEmpleado.resx">
       <DependentUpon>201709010139144_AddPersonEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709032239240_AddStateRegistroIngreso.resx">
+      <DependentUpon>201709032239240_AddStateRegistroIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709040525531_AddCriticidadHistoria.resx">
+      <DependentUpon>201709040525531_AddCriticidadHistoria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

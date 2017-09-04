@@ -30,4 +30,11 @@ namespace ClinicaUtil
         MalEstado = 4,
         DeBaja = 5
     }
+
+    public enum EstadoRegistroIngreso : int
+    {
+        Activado = 1,
+        DesActivado = 2
+    }
+
 }

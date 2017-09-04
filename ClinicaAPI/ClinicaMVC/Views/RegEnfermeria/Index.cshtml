@@ -1,7 +1,49 @@
-﻿
+﻿@model ClinicaMVC.Models.RegEnfermeriaViewModel
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+@foreach (var item in Model.IngresoSalidaPacientes)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Info Boxes Style 1 -->
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="ion ion-android-person"></i></span>
 
+                <div class="info-box-content">
+                    <div class="col-md-5">
+                        <b>Paciente: </b> @item.Solicitud.HistoriaClinica.Paciente.Nombre
+                        <br/>
+                        <b>Diagnostico: </b> @item.Solicitud.HistoriaClinica.Diagnostico.Nombre
+                        <br />
+                        <b>Tratamiento: </b> @item.Solicitud.HistoriaClinica.Tratamiento.Nombre
+                        <br />
+                        <b>Cama: </b> @item.Cama.Descripcion
+                        <br />
+                        
+                    </div>
+                    <div class="col-md-5">
+                        <b>Nivel Criticidad: </b> @item.Solicitud.HistoriaClinica.NivelCriticidad.Nombre
+                        <br />
+                        <b>Peso: </b> @item.Solicitud.HistoriaClinica.Peso
+                        <br />
+                        <b>Talla: </b> @item.Solicitud.HistoriaClinica.Talla
+                        <br />
+                        <b>G. Sanguineo: </b> @item.Solicitud.HistoriaClinica.GrupoSangineo
+                        <br />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-block btn-primary btn-xs">Agregar Detalle</button>
+                        <button type="button" class="btn btn-block btn-primary btn-xs">Ver Historial</button>
+                        <button type="button" class="btn btn-block btn-primary btn-xs">Anular Detalle</button>
+                    </div>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+
+        </div>
+    </div>
+}

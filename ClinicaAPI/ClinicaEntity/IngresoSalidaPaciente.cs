@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClinicaUtil;
 
 namespace ClinicaEntity
 {
@@ -17,7 +18,7 @@ namespace ClinicaEntity
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaSalida { get; set; }
         public string Motivo { get; set; }
-        public string Estado { get; set; }
+        public EstadoRegistroIngreso Estado { get; set; }
 
         [ForeignKey("Cama")]
         public int IdCama { get; set; }
@@ -27,8 +28,5 @@ namespace ClinicaEntity
         public int IdSolicitud { get; set; }
         public Solicitud Solicitud { get; set; }
 
-        [ForeignKey("Paciente")]
-        public int IdPaciente { get; set; }
-        public Paciente Paciente { get; set; }
     }
 }
