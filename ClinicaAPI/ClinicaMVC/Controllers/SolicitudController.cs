@@ -18,7 +18,6 @@ namespace ClinicaMVC.Controllers
         // GET: Solicitud
         public ActionResult Index()
         {
-            
             var model = new SolicitudViewModel();
             model.Solicitudes = _solicitudBl.List((int) EstadoSolicitud.Pendiente);
             return View(model);

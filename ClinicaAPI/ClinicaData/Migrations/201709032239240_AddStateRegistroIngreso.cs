@@ -18,7 +18,7 @@ namespace ClinicaData.Migrations
             AddColumn("dbo.IngresoSalidaPaciente", "IdPaciente", c => c.Int(nullable: false));
             AlterColumn("dbo.IngresoSalidaPaciente", "Estado", c => c.String());
             CreateIndex("dbo.IngresoSalidaPaciente", "IdPaciente");
-            AddForeignKey("dbo.IngresoSalidaPaciente", "IdPaciente", "dbo.Paciente", "Id", cascadeDelete: true);
+            AddForeignKey("dbo.IngresoSalidaPaciente", "IdPaciente", "dbo.Paciente", "Id", cascadeDelete: false);
         }
     }
 }

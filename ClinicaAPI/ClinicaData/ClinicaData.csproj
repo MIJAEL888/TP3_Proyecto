@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201709040525531_AddCriticidadHistoria.Designer.cs">
       <DependentUpon>201709040525531_AddCriticidadHistoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709052141232_AddSeedInfo.cs" />
+    <Compile Include="Migrations\201709052141232_AddSeedInfo.Designer.cs">
+      <DependentUpon>201709052141232_AddSeedInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709040525531_AddCriticidadHistoria.resx">
       <DependentUpon>201709040525531_AddCriticidadHistoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709052141232_AddSeedInfo.resx">
+      <DependentUpon>201709052141232_AddSeedInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
