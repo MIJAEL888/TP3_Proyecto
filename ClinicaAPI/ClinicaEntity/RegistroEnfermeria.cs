@@ -21,11 +21,5 @@ namespace ClinicaEntity
         [ForeignKey("HistoriaClinica")]
         public int IdHistoriaClinica { get; set; }
         public HistoriaClinica HistoriaClinica { get; set; }
-
-        [ForeignKey("Paciente")]
-        public int IdPaciente { get; set; }
-        public Paciente Paciente { get; set; }
-
-
     }
 }

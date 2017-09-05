@@ -1720,6 +1720,7 @@
     <Content Include="Views\Solicitud\Index.cshtml" />
     <Content Include="Views\Solicitud\Nuevo.cshtml" />
     <Content Include="Views\RegEnfermeria\Index.cshtml" />
+    <Content Include="Views\RegEnfermeria\Nuevo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

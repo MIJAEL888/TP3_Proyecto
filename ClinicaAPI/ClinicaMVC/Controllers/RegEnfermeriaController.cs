@@ -19,5 +19,12 @@ namespace ClinicaMVC.Controllers
             model.IngresoSalidaPacientes = _registroIngresoBl.List((int) EstadoRegistroIngreso.Activado);
             return View(model);
         }
+
+        public ActionResult Nuevo()
+        {
+            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel();
+
+            return PartialView(model);
+        }
     }
 }

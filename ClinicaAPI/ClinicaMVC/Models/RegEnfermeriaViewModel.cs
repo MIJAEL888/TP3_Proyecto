@@ -8,6 +8,7 @@ namespace ClinicaMVC.Models
 {
     public class RegEnfermeriaViewModel
     {
+
         public List<IngresoSalidaPaciente> IngresoSalidaPacientes { get; set; }
     }
 }
