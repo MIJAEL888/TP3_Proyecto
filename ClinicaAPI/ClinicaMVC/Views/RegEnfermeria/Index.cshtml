@@ -36,9 +36,9 @@
                         <br />
                     </div>
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-block btn-primary btn-xs">Agregar Detalle</button>
+                        <button type="button" class="btn btn-block btn-primary btn-xs" onclick="NuevoDetalleRegistro(@item.Id)">Agregar Detalle</button>
                         <button type="button" class="btn btn-block btn-primary btn-xs">Ver Historial</button>
-                        <button type="button" class="btn btn-block btn-primary btn-xs">Anular Detalle</button>
+                        @*<button type="button" class="btn btn-block btn-primary btn-xs">Anular Detalle</button>*@
                     </div>
                 </div>
                 <!-- /.info-box-content -->
@@ -47,3 +47,23 @@
         </div>
     </div>
 }
+
+
+<div id="modalNuevoRegistroEnf" class="modal fade bs-example-modal-lg" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Agregar Detalle del registro de enfermeria. </h4>
+            </div>
+            <div class="modal-body">
+                <p>Datos del formulario... </p>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" onclick="EnviarFormularioRegEnf()">Aceptar</a>
+                <a href="#" class="btn btn-primary" onclick="closeModal('#modalNuevoRegistroEnf')">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>

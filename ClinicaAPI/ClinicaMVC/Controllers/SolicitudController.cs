@@ -12,8 +12,8 @@ namespace ClinicaMVC.Controllers
 {
     public class SolicitudController : Controller
     {
-        readonly SolicitudBl _solicitudBl = new SolicitudBl();
-        readonly CamaBl _camaBl = new CamaBl();
+        readonly SolicitudBl _solicitudBl = SolicitudBl.Instance;
+        readonly CamaBl _camaBl = CamaBl.Instance;
 
         // GET: Solicitud
         public ActionResult Index()

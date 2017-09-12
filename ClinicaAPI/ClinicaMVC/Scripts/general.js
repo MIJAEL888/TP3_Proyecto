@@ -138,3 +138,20 @@ function reservarCita(idTurno) {
 function closeModal(id) {
     $(id).modal('hide');
 }
+
+function NuevoDetalleRegistro(idRegistroIngreso) {
+    $.ajax({
+        url: "/RegEnfermeria/Nuevo",
+        method: "POST",
+        data: {
+            idRegistroIngreso: "1"
+        }
+    })
+    .done(function (data) {
+        $("#modalNuevoRegistroEnf").find('.modal-body').html(data);
+        $("#modalNuevoRegistroEnf").modal('show');
+    })
+    .fail(function (data) {
+        toastr.error(data);
+    });
+}

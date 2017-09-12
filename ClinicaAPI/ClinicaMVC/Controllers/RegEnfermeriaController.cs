@@ -11,18 +11,23 @@ namespace ClinicaMVC.Controllers
 {
     public class RegEnfermeriaController : Controller
     {
-        readonly RegistroIngresoBl _registroIngresoBl = new RegistroIngresoBl();
+        readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
         // GET: RegEnfermeria
         public ActionResult Index()
         {
-            RegEnfermeriaViewModel model =  new RegEnfermeriaViewModel();
-            model.IngresoSalidaPacientes = _registroIngresoBl.List((int) EstadoRegistroIngreso.Activado);
+            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel
+            {
+                IngresoSalidaPacientes = _registroIngresoBl.List((int)EstadoRegistroIngreso.Activado)
+            };
             return View(model);
         }
 
-        public ActionResult Nuevo()
+        public ActionResult Nuevo(int idRegistroIngreso)
         {
-            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel();
+            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel
+            {
+                IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso)
+            };
 
             return PartialView(model);
         }
