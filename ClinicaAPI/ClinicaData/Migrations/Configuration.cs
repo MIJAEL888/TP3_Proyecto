@@ -790,7 +790,7 @@ namespace ClinicaData.Migrations
                 {
                     Id = 11,
                     Nombre = "Ventilacion controlada por volumen",
-                    Codigo = "TEM",
+                    Codigo = "VCV",
                     Descripcion = "Ventilacion controlada por volumen",
                     ValorMaximo = 30,
                     ValorMinimo = 0,
@@ -826,7 +826,7 @@ namespace ClinicaData.Migrations
                 {
                     Id = 14,
                     Nombre = "Saturacion de Oxigeno",
-                    Codigo = "TEM",
+                    Codigo = "SATO2",
                     Descripcion = "Saturacion de Oxigeno",
                     ValorMaximo = 15,
                     ValorMinimo = 0,

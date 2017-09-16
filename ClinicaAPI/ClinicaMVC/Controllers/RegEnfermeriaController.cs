@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ClinicaBussines;
@@ -30,6 +31,22 @@ namespace ClinicaMVC.Controllers
             };
 
             return PartialView(model);
+        }
+
+        [HttpPost]
+        public ActionResult Save(RegEnfermeriaViewModel model)
+        {
+            try
+            {
+
+                return Json("Se aprobo la solicitud");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
+            
         }
     }
 }
