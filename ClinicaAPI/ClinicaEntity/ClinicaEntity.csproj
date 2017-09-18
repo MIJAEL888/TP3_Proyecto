@@ -58,6 +58,7 @@
     <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroEnfermeria.cs" />
+    <Compile Include="RegistroEnfermeriaModel.cs" />
     <Compile Include="RegistroEnfermeriaDetalle.cs" />
     <Compile Include="Sala.cs" />
     <Compile Include="Solicitud.cs" />
