@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
-using ClinicaEntity;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ClinicaMVC.Models
+namespace ClinicaEntity
 {
-    public class RegEnfermeriaViewModel
+
+    public class RegistroEnfermeriaModel
     {
-        public List<IngresoSalidaPaciente> IngresoSalidaPacientes { get; set; }
-        public IngresoSalidaPaciente IngresoSalidaPaciente { get; set; }
+        public int IdIngresoSalidaPaciente { get; set; }
 
         public string Observacion { get; set; }
         public string Antecedentes { get; set; }

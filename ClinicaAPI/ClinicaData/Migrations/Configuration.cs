@@ -742,7 +742,7 @@ namespace ClinicaData.Migrations
                 {
                     Id = 7,
                     Nombre = "Presion Arterial",
-                    Codigo = "PES",
+                    Codigo = "PSPD",
                     Descripcion = "Presion Arterial",
                     ValorMaximo = 45,
                     ValorMinimo = 0,
@@ -766,7 +766,7 @@ namespace ClinicaData.Migrations
                 {
                     Id = 9,
                     Nombre = "Presion Aterial Pulmonar",
-                    Codigo = "PCP",
+                    Codigo = "PCMPAP",
                     Descripcion = "Presion Aterial Pulmonar",
                     ValorMaximo = 45,
                     ValorMinimo = 0,
@@ -778,7 +778,7 @@ namespace ClinicaData.Migrations
                 {
                     Id = 10,
                     Nombre = "Gasto Cardiaco",
-                    Codigo = "GC",
+                    Codigo = "GCIC",
                     Descripcion = "Gasto Cardiaco",
                     ValorMaximo = 45,
                     ValorMinimo = 0,
@@ -789,6 +789,18 @@ namespace ClinicaData.Migrations
                 new FactorRiesgo
                 {
                     Id = 11,
+                    Nombre = "Modalidad",
+                    Codigo = "MODALIDAD",
+                    Descripcion = "Modalidad de respiracion",
+                    ValorMaximo = 3,
+                    ValorMinimo = 0,
+                    Unidades = Enum.GetName(typeof(TipoUnidades), TipoUnidades.VolumenMinuto),
+                    CodUnidades = TipoUnidades.VolumenMinuto,
+                    Padre = 2
+                },
+                new FactorRiesgo
+                {
+                    Id = 12,
                     Nombre = "Ventilacion controlada por volumen",
                     Codigo = "VCV",
                     Descripcion = "Ventilacion controlada por volumen",
@@ -800,7 +812,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 12,
+                    Id = 13,
                     Nombre = "Frecuencia Respiratoria",
                     Codigo = "FR",
                     Descripcion = "Frecuencia Respiratoria",
@@ -812,7 +824,19 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 13,
+                    Id = 14,
+                    Nombre = "Peeps por segundo",
+                    Codigo = "PEEPS",
+                    Descripcion = "Peeps por segundo",
+                    ValorMaximo = 30,
+                    ValorMinimo = 0,
+                    Unidades = Enum.GetName(typeof(TipoUnidades), TipoUnidades.RespiracionMinuto),
+                    CodUnidades = TipoUnidades.RespiracionMinuto,
+                    Padre = 2
+                },
+                new FactorRiesgo
+                {
+                    Id = 15,
                     Nombre = "Fraccion respiratoria de oxigeno",
                     Codigo = "FIO2",
                     Descripcion = "Fraccion respiratoria de oxigeno",
@@ -824,7 +848,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 14,
+                    Id = 16,
                     Nombre = "Saturacion de Oxigeno",
                     Codigo = "SATO2",
                     Descripcion = "Saturacion de Oxigeno",
@@ -836,7 +860,31 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 15,
+                    Id = 17,
+                    Nombre = "Pupila",
+                    Codigo = "PUPILA",
+                    Descripcion = "Pupila",
+                    ValorMaximo = 100,
+                    ValorMinimo = 0,
+                    Unidades = Enum.GetName(typeof(TipoUnidades), TipoUnidades.Porcentaje),
+                    CodUnidades = TipoUnidades.Porcentaje,
+                    Padre = 3
+                },
+                new FactorRiesgo
+                {
+                    Id = 18,
+                    Nombre = "Estado de conciencia",
+                    Codigo = "ESTADOCONC",
+                    Descripcion = "Ramsay",
+                    ValorMaximo = 100,
+                    ValorMinimo = 0,
+                    Unidades = Enum.GetName(typeof(TipoUnidades), TipoUnidades.Porcentaje),
+                    CodUnidades = TipoUnidades.Porcentaje,
+                    Padre = 3
+                },
+                new FactorRiesgo
+                {
+                    Id = 19,
                     Nombre = "Glasgow",
                     Codigo = "GLASGOW",
                     Descripcion = "Glasgow",
@@ -848,7 +896,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 16,
+                    Id = 20,
                     Nombre = "Ramsay",
                     Codigo = "RAMSAY",
                     Descripcion = "Ramsay",
@@ -860,7 +908,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 17,
+                    Id = 21,
                     Nombre = "Modalidad SD",
                     Codigo = "MSD",
                     Descripcion = "Modalidad SD",
@@ -872,7 +920,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 18,
+                    Id = 22,
                     Nombre = "Modalidad SI",
                     Codigo = "MSI",
                     Descripcion = "Modalidad SI",
@@ -884,7 +932,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 19,
+                    Id = 23,
                     Nombre = "Egresos",
                     Codigo = "EGRESO",
                     Descripcion = "Egresos",
@@ -896,7 +944,7 @@ namespace ClinicaData.Migrations
                 },
                 new FactorRiesgo
                 {
-                    Id = 20,
+                    Id = 24,
                     Nombre = "Ingresos",
                     Codigo = "INGRESO",
                     Descripcion = "Ingresos",
