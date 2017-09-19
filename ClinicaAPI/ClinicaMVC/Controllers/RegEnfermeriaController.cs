@@ -23,6 +23,7 @@ namespace ClinicaMVC.Controllers
             {
                 IngresoSalidaPacientes = _registroIngresoBl.List((int)EstadoRegistroIngreso.Activado)
             };
+            
             return View(model);
         }
 
@@ -32,7 +33,7 @@ namespace ClinicaMVC.Controllers
             {
                 IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso)
             };
-
+            model.IdIngresoSalidaPaciente = idRegistroIngreso;
             return PartialView(model);
         }
 

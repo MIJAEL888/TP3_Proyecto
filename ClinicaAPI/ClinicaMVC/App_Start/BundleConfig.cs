@@ -29,6 +29,7 @@ namespace ClinicaMVC
                 "~/Scripts/respond.js",
                 "~/scripts/toastr.js",
                 "~/Scripts/jquery.validate*",
+                "~/Scripts/jquery.form.js",
                 "~/scripts/app.js",
                 "~/scripts/adminlte.js",
                 "~/scripts/general.js"));

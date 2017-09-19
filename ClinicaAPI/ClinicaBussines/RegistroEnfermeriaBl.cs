@@ -36,7 +36,7 @@ namespace ClinicaBussines
             using (var context = new DataContext())
             {
                 context.RegistroEnfermerias.Add(registroEnfermeria);
-                registroEnfermeria.Id =context.SaveChanges();
+                context.SaveChanges();
             }
             return registroEnfermeria;
         }
@@ -272,8 +272,9 @@ namespace ClinicaBussines
                         context.SaveChanges();
                         dbContextTransaction.Commit();
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
+                        
                         dbContextTransaction.Rollback();
                     }
                 }

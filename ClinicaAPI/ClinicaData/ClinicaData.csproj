@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201709052141232_AddSeedInfo.Designer.cs">
       <DependentUpon>201709052141232_AddSeedInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709190416309_CorreccionRegistroEnfermeria.cs" />
+    <Compile Include="Migrations\201709190416309_CorreccionRegistroEnfermeria.Designer.cs">
+      <DependentUpon>201709190416309_CorreccionRegistroEnfermeria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709052141232_AddSeedInfo.resx">
       <DependentUpon>201709052141232_AddSeedInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709190416309_CorreccionRegistroEnfermeria.resx">
+      <DependentUpon>201709190416309_CorreccionRegistroEnfermeria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

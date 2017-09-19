@@ -53,22 +53,14 @@
         }
     });
 
-    $("#").validate({
-        rules: {    
-            TipoAtenciones: { validCustomer: true },
-            Doctores: { validCustomer: true },
-            Pacientes: { validCustomer: true },
-            Desde: { requerido: true },
-            Hasta: { requerido: true }
-        },
+    $("#formRegistroEnfermeria").validate({
         submitHandler: function () {
+            alert("im here");
             $.ajax({
-                    url: "/citas/ListTurnos",
+                url: "/RegEnfermeria/Save",
                     method: "post",
                     data: {
-                        Desde: $("#Desde").val(),
-                        Hasta: $("#Hasta").val(),
-                        IdDoctor: $("#Doctores").val(),
+                        Temperatura : 10
                     }
                 })
                 .done(function (data) {
@@ -171,14 +163,49 @@ function NuevoDetalleRegistro(idRegistroIngreso) {
         url: "/RegEnfermeria/Nuevo",
         method: "POST",
         data: {
-            idRegistroIngreso: "1"
+            idRegistroIngreso: idRegistroIngreso
         }
     })
     .done(function (data) {
         $("#modalNuevoRegistroEnf").find('.modal-body').html(data);
         $("#modalNuevoRegistroEnf").modal('show');
-    })
+            ValidateFormRegEnfermeria();
+        })
     .fail(function (data) {
         toastr.error(data);
     });
+}
+
+function EnviarFormularioRegEnf() {
+    $("#formRegistroEnfermeria").submit();
+}
+
+function ValidateFormRegEnfermeria() {
+    $("#formRegistroEnfermeria").validate({
+        submitHandler: function (form) {
+           
+            $.ajax({
+                url: "/RegEnfermeria/Save",
+                method: "post",
+                data: objectifyForm($(form).serializeArray())
+                })
+                .done(function (data) {
+                    $("#listTurnos").html(data);
+                    toastr.success("Listado satisfactorio de turnos.");
+                })
+                .fail(function () {
+                    toastr.error("Ocurrio un error durante el listado de turnos.");
+                });
+            return false;
+        }
+    });
+}
+
+function objectifyForm(formArray) {//serialize data function
+
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++) {
+        returnArray[formArray[i]['name']] = formArray[i]['value'];
+    }
+    return returnArray;
 }
