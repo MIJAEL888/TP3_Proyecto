@@ -37,7 +37,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +51,7 @@
     <Compile Include="CitaBl.cs" />
     <Compile Include="DoctorBl.cs" />
     <Compile Include="FactorRiesgoBl.cs" />
+    <Compile Include="FactorRiesgoCriticidadBl.cs" />
     <Compile Include="NivelCriticidadBl.cs" />
     <Compile Include="PacienteBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

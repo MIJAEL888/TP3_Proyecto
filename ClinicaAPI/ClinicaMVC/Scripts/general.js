@@ -33,7 +33,6 @@
             Hasta: { requerido: true }
         },
         submitHandler: function () {
-
             $.ajax({
                 url: "/citas/ListTurnos",
                 method: "post",
@@ -43,6 +42,35 @@
                     IdDoctor: $("#Doctores").val(),
                 }
             })
+            .done(function (data) {
+                $("#listTurnos").html(data);
+                toastr.success("Listado satisfactorio de turnos.");
+            })
+            .fail(function () {
+                toastr.error("Ocurrio un error durante el listado de turnos.");
+            });
+            return false;
+        }
+    });
+
+    $("#").validate({
+        rules: {    
+            TipoAtenciones: { validCustomer: true },
+            Doctores: { validCustomer: true },
+            Pacientes: { validCustomer: true },
+            Desde: { requerido: true },
+            Hasta: { requerido: true }
+        },
+        submitHandler: function () {
+            $.ajax({
+                    url: "/citas/ListTurnos",
+                    method: "post",
+                    data: {
+                        Desde: $("#Desde").val(),
+                        Hasta: $("#Hasta").val(),
+                        IdDoctor: $("#Doctores").val(),
+                    }
+                })
                 .done(function (data) {
                     $("#listTurnos").html(data);
                     toastr.success("Listado satisfactorio de turnos.");
@@ -53,7 +81,6 @@
             return false;
         }
     });
-
 });
 
 function BuscarCama(idSolicitud) {

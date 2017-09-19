@@ -8,31 +8,31 @@ namespace ClinicaUtil
 {
     public class Constantes
     {
-       public class NivelesCriticidad
+       public class FatoresRiesgo
        {
             public const string HrmTemperatura = "TEM";
             public const string HrmRitmoCard = "RC";
-            public const string HrmPsPd = "PES";
-            public const string HrmPcmPap = "PAM";
-            public const string HrmPam = "PCP";
-            public const string HrmGcIc = "GC";
+            public const string HrmPsPd = "PSPD";
+            public const string HrmPcmPap = "PCMPAP";
+            public const string HrmPam = "PAM";
+            public const string HrmGcIc = "GCIC";
 
-            public const string RespModalidad = "VCV";
-            public const string RespVc = "FR";
-            public const string RespFr = "FIO2";
-            public const string RespPeeps = "SAT02";
-            public const string RespFio2 = "GLASGOW";
-            public const string RespSatO2 = "RAMSAY";
+            public const string RespModalidad = "MODALIDAD";
+            public const string RespVc = "VCV";
+            public const string RespFr = "FR";
+            public const string RespPeeps = "PEEPS";
+            public const string RespFio2 = "FIO2";
+            public const string RespSatO2 = "SATO2";
 
-            public const string NeuroPupila = "MSD";
-            public const string NeuroEstadoConc = "MSI";
-            public const string NeuroGlosgow = "EGRESO";
-            public const string NeuroRamsay = "INGRESO";
-            public const string NeuroMotSd = "INGRESO";
-            public const string NeuroMotSi = "INGRESO";
+            public const string NeuroPupila = "PUPILA";
+            public const string NeuroEstadoConc = "ESTADOCONC";
+            public const string NeuroGlosgow = "GLASGOW";
+            public const string NeuroRamsay = "RAMSAY";
+            public const string NeuroMotSd = "MSD";
+            public const string NeuroMotSi = "MSI";
 
             public const string HidriIngresos = "INGRESO";
-            public const string HidriEgresos = "INGRESO";
+            public const string HidriEgresos = "EGRESO";
         }
     }
 }

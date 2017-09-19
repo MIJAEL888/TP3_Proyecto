@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using ClinicaBussines;
+using ClinicaEntity;
 using ClinicaMVC.Models;
 using ClinicaUtil;
 
@@ -13,6 +15,7 @@ namespace ClinicaMVC.Controllers
     public class RegEnfermeriaController : Controller
     {
         readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
+        readonly RegistroEnfermeriaBl _registroEnfermeriaBl = RegistroEnfermeriaBl.Instance;
         // GET: RegEnfermeria
         public ActionResult Index()
         {
@@ -38,8 +41,9 @@ namespace ClinicaMVC.Controllers
         {
             try
             {
-
-                return Json("Se aprobo la solicitud");
+                var registroEnfermeriaModel = Mapper.Map<RegEnfermeriaViewModel, RegistroEnfermeriaModel>(model);
+                _registroEnfermeriaBl.SaveDetails(registroEnfermeriaModel);
+                return Json("Se guardo la informacion sin problemas.");
             }
             catch (Exception e)
             {

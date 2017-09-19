@@ -53,5 +53,16 @@ namespace ClinicaBussines
                 return result;
             }
         }
+
+        public NivelCriticidad Get(string codigo, int valor)
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from i in context.NivelCriticidades
+                        select i)
+                    .Single(c => c.Codigo == codigo);
+                return result;
+            }
+        }
     }
 }
