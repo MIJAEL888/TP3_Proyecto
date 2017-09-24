@@ -12,6 +12,7 @@ using ClinicaUtil;
 
 namespace ClinicaMVC.Controllers
 {
+    [SessionFilter]
     public class RegEnfermeriaController : Controller
     {
         readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;

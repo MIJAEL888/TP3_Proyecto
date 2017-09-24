@@ -8,8 +8,8 @@ namespace ClinicaUtil
 {
     public class Constantes
     {
-       public class FatoresRiesgo
-       {
+        public class FatoresRiesgo
+        {
             public const string HrmTemperatura = "TEM";
             public const string HrmRitmoCard = "RC";
             public const string HrmPsPd = "PSPD";
@@ -33,6 +33,17 @@ namespace ClinicaUtil
 
             public const string HidriIngresos = "INGRESO";
             public const string HidriEgresos = "EGRESO";
+        }
+
+        public class CodigoRoles
+        {
+            public const string Doctor = "DOC";
+            public const string Enfermera = "ENFER";
+        }
+
+        public class NombreSession
+        {
+            public const string Usuario = "UsuarioData";
         }
     }
 }

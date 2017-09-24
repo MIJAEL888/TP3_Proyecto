@@ -2,11 +2,15 @@
 using ClinicaData;
 using ClinicaEntity;
 using ClinicaUtil;
+using log4net;
 
 namespace ClinicaBussines
 {
     public class RegistroEnfermeriaBl
     {
+        private static readonly ILog Log =
+              LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         readonly FactorRiesgoCriticidadBl _factorRiesgoCriticidadBl = FactorRiesgoCriticidadBl.Instance;
         readonly FactorRiesgoBl _factorRiesgoBl = FactorRiesgoBl.Instance;
 
@@ -274,7 +278,7 @@ namespace ClinicaBussines
                     }
                     catch (Exception e)
                     {
-                        
+                        Log.Error(e.Message);
                         dbContextTransaction.Rollback();
                     }
                 }

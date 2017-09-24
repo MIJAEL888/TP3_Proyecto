@@ -60,6 +60,7 @@
     <Compile Include="RegistroEnfermeria.cs" />
     <Compile Include="RegistroEnfermeriaDetalle.cs" />
     <Compile Include="RegistroEnfermeriaModel.cs" />
+    <Compile Include="RolUsuario.cs" />
     <Compile Include="Sala.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="TipoAtencion.cs" />

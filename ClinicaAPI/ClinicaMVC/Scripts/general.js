@@ -190,7 +190,6 @@ function ValidateFormRegEnfermeria() {
                 data: objectifyForm($(form).serializeArray())
                 })
                 .done(function (data) {
-                    $("#listTurnos").html(data);
                     toastr.success("Listado satisfactorio de turnos.");
                 })
                 .fail(function () {

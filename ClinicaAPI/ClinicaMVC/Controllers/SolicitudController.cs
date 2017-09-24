@@ -10,6 +10,7 @@ using ClinicaUtil;
 
 namespace ClinicaMVC.Controllers
 {
+    [SessionFilter]
     public class SolicitudController : Controller
     {
         readonly SolicitudBl _solicitudBl = SolicitudBl.Instance;

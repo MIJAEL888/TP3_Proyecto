@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201709190416309_CorreccionRegistroEnfermeria.Designer.cs">
       <DependentUpon>201709190416309_CorreccionRegistroEnfermeria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709232339234_AddUsuarioRol.cs" />
+    <Compile Include="Migrations\201709232339234_AddUsuarioRol.Designer.cs">
+      <DependentUpon>201709232339234_AddUsuarioRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709190416309_CorreccionRegistroEnfermeria.resx">
       <DependentUpon>201709190416309_CorreccionRegistroEnfermeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709232339234_AddUsuarioRol.resx">
+      <DependentUpon>201709232339234_AddUsuarioRol.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

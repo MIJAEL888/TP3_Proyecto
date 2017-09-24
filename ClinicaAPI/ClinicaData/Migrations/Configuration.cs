@@ -48,16 +48,6 @@ namespace ClinicaData.Migrations
                 }
             );
 
-            context.Usuarios.AddOrUpdate(u => u.Id,
-                new Usuario
-                {
-                    Id = 1,
-                    Nombre = "Mijael Palomino",
-                    Contrasenia = "12345",
-                    FechaCreacion = DateTime.Now
-                }
-            );
-
             context.Pacientes.AddOrUpdate(p => p.Id,
                 new Paciente
                 {
@@ -360,7 +350,43 @@ namespace ClinicaData.Migrations
                     Telefono = "05234445",
                     Direccion = "Direccion 5",
                     Correo = "xyz@gmail.com"
-                }
+                },
+                 new Persona
+                 {
+                     Id = 6,
+                     Nombre = "Nombre Persona 6",
+                     Apellido = "Apellido persona 6",
+                     TipoDocumento = TipoDocumento.Dni.ToString(),
+                     NumeroDocumento = "52345678",
+                     Sexo = "M",
+                     Telefono = "05234445",
+                     Direccion = "Direccion 6",
+                     Correo = "xyz@gmail.com"
+                 },
+                  new Persona
+                  {
+                      Id = 7,
+                      Nombre = "Nombre Persona 7",
+                      Apellido = "Apellido persona 7",
+                      TipoDocumento = TipoDocumento.Dni.ToString(),
+                      NumeroDocumento = "52345678",
+                      Sexo = "M",
+                      Telefono = "05234445",
+                      Direccion = "Direccion 7",
+                      Correo = "xyz@gmail.com"
+                  },
+                   new Persona
+                   {
+                       Id = 8,
+                       Nombre = "Nombre Persona 8",
+                       Apellido = "Apellido persona 8",
+                       TipoDocumento = TipoDocumento.Dni.ToString(),
+                       NumeroDocumento = "52345678",
+                       Sexo = "M",
+                       Telefono = "05234445",
+                       Direccion = "Direccion 8",
+                       Correo = "xyz@gmail.com"
+                   }
             );
             context.Areas.AddOrUpdate(d => d.Id,
                 new Area
@@ -1285,7 +1311,8 @@ namespace ClinicaData.Migrations
                     ValorMaximo = 100,
                     IdFactorRiesgo = 13,
                     IdNivelCriticidad = 4
-                }, new FactorRiesgoCriticidad
+                }, 
+                new FactorRiesgoCriticidad
                 {
                     ValorMinimo = -20,
                     ValorMaximo = 10,
@@ -1592,6 +1619,42 @@ namespace ClinicaData.Migrations
                     ValorMaximo = 100,
                     IdFactorRiesgo = 24,
                     IdNivelCriticidad = 4
+                }
+            );
+            context.RolUsuarios.AddOrUpdate(d => d.Id,
+                new RolUsuario
+                {
+                    Id = 1,
+                    Nombre = "Doctor",
+                    Codigo = "DOC"
+                },
+                new RolUsuario
+                {
+                    Id = 2,
+                    Nombre = "Enfermera",
+                    Codigo = "ENFER"
+                }
+            );
+            context.Usuarios.AddOrUpdate(d => d.Id, 
+                new Usuario
+                {
+                    Id = 1,
+                    NombreUsuario = "Doctor 1",
+                    CorreoUsuario = "doctor@upc.edu.pe",
+                    Contrasenia = "123456",
+                    FechaCreacion = DateTime.Now,
+                    IdRolUsuario = 1,
+                    IdPersona = 5
+                },
+                new Usuario
+                {
+                    Id = 2,
+                    NombreUsuario = "Enfermera 1",
+                    CorreoUsuario = "enfermera@upc.edu.pe",
+                    Contrasenia = "123456",
+                    FechaCreacion = DateTime.Now,
+                    IdRolUsuario = 2,
+                    IdPersona = 4
                 }
             );
         }
