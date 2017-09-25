@@ -32,7 +32,8 @@ namespace ClinicaMVC.Controllers
         {
             RegEnfermeriaViewModel model = new RegEnfermeriaViewModel
             {
-                IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso)
+                IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso),
+                
             };
             model.IdIngresoSalidaPaciente = idRegistroIngreso;
             return PartialView(model);
