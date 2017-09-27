@@ -22,5 +22,7 @@ namespace ClinicaEntity
         public int IdIngresoSalidaPaciente { get; set; }
         public IngresoSalidaPaciente IngresoSalidaPaciente { get; set; }
 
+        [NotMapped]
+        public string FechaRegistroString => FechaRegistro.ToString("dd HH:mm");
     }
 }

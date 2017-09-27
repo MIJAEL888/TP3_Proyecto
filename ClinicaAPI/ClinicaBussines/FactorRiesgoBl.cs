@@ -77,6 +77,9 @@ namespace ClinicaBussines
                     factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id).Select(c => c.Valor).ToList();
                     factor.FactorRiesgosHijos.Add(factorHijo);
                 }
+                factor.RegistroEnfermerias = enfermeriaDetalles.GroupBy(item => item.IdRegistroEnfermeria)
+                .Select(group => group.First().RegistroEnfermeria)
+                .ToList();
             }
             return factoresPadre;
         }

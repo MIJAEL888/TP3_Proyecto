@@ -31,6 +31,7 @@ namespace ClinicaEntity
         public List<int> Values { get; set; }
         [NotMapped]
         public int IdRegistroIngreso { get; set; }
-
+        [NotMapped]
+        public List<RegistroEnfermeria> RegistroEnfermerias { get; set; }
     }
 }

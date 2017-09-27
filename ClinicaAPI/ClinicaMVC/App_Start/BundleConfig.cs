@@ -46,6 +46,7 @@ namespace ClinicaMVC
                       "~/Content/bootstrap.css",
                       "~/Content/css/font-awesome.css",
                       "~/Content/Ionicons/css/ionicons.css",
+                      "~/Content/toastr.css",
                       "~/Content/AdminLTE.css",
                       "~/Content/iCheck/square/green.css",
                       "~/Content/skins/skin-green.css" )); //"~/Content/site.css"

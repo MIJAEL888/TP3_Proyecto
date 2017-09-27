@@ -213,10 +213,11 @@ function ValidateFormRegEnfermeria() {
                 data: objectifyForm($(form).serializeArray())
                 })
                 .done(function (data) {
-                    toastr.success("Listado satisfactorio de turnos.");
+                    $("#modalNuevoRegistroEnf").modal('hide');
+                    toastr.success("Se guardo el registro.");
                 })
                 .fail(function () {
-                    toastr.error("Ocurrio un error durante el listado de turnos.");
+                    toastr.error("Ocurrio un error durante el Proceso.");
                 });
             return false;
         }
@@ -253,7 +254,9 @@ function VerDetalleRegistro(idRegistroIngreso) {
                         title: {
                             text: "Monitreo: " + value.Nombre
                         },
-
+                        xAxis: {
+                            categories: GetArrayCategories(value.RegistroEnfermerias)
+                        },
                         yAxis: [{ // left y axis
                             title: {
                                 text: null
@@ -291,11 +294,11 @@ function VerDetalleRegistro(idRegistroIngreso) {
                             shared: true,
                             crosshairs: true
                         },
-                        plotOptions: {
-                            series: {
-                                pointStart: 1
-                            }
-                        },
+                        //plotOptions: {
+                        //    series: {
+                        //        pointStart: 1
+                        //    }
+                        //},
 
                         series: GetArrayValues(value.FactorRiesgosHijos)
                     });
@@ -316,6 +319,16 @@ function GetArrayValues(series) {
         item["name"] = value.Codigo;
         item["data"] = value.Values;
         jsonObj.push(item);
+    });
+    return jsonObj;
+
+}
+
+function GetArrayCategories(registros) {
+    var jsonObj = [];
+    $.each(registros, function (key, value) {
+
+        jsonObj.push(value.FechaRegistroString);
     });
     return jsonObj;
 
