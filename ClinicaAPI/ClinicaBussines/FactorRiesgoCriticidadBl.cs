@@ -41,8 +41,8 @@ namespace ClinicaBussines
                         select i)
                     .Include(c => c.NivelCriticidad)
                     .Include(c => c.FactorRiesgo)
-                    .Single(c => c.FactorRiesgo.Codigo == codigo && 
-                                 c.ValorMaximo >= valor && 
+                    .FirstOrDefault(c => c.FactorRiesgo.Codigo == codigo && 
+                                 c.ValorMaximo > valor && 
                                  c.ValorMinimo <= valor);
                 return result;
             }

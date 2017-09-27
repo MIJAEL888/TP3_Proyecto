@@ -173,7 +173,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="@Url.Action("LogOut", "Login")" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -236,6 +236,8 @@
                     @if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Doctor)
                     {
                         <li class="active"><a href="@Url.Action("Index", "Solicitud")"><i class="fa fa-link"></i> <span> Solicitudes UCI </span></a></li>
+                        <li class="active"><a href="@Url.Action("Index", "DiagnosticoGravedad")"><i class="fa fa-link"></i> <span> Diagnóstico Gravedad </span></a></li>
+                        <li class="active"><a href="@Url.Action("Index", "Reporte")"><i class="fa fa-link"></i> <span> Reporte Cubo </span></a></li>
                     }
                     else if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Enfermera)
                     {

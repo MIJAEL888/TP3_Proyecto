@@ -14,6 +14,7 @@ namespace ClinicaMVC.Controllers
     public class LoginController : Controller
     {
         readonly UsuarioBl _usuarioBl = UsuarioBl.Instance;
+
         // GET: Login
         public ActionResult Index()
         {
@@ -22,7 +23,7 @@ namespace ClinicaMVC.Controllers
 
         public ActionResult LogIn(UsuarioViewModel model)
         {
-            var entidad =_usuarioBl.Get(model.CorreoUsuario, model.Contrasenia);
+            var entidad = _usuarioBl.Get(model.CorreoUsuario, model.Contrasenia);
             if (entidad == null || entidad.Id == 0)
                 return Json(new
                 {
@@ -37,5 +38,12 @@ namespace ClinicaMVC.Controllers
             });
         }
 
+        public ActionResult LogOut(UsuarioViewModel model)
+        {
+            Session[Constantes.NombreSession.Usuario] = null;
+            Session.Clear();
+            Session.Abandon();
+            return Redirect("/Login");
+        }
     }
 }

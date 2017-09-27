@@ -10,6 +10,7 @@ namespace ClinicaBussines
 {
     public class FactorRiesgoBl
     {
+        readonly RegistroEnfermeriaDetalleBl _registroEnfermeriaDetalleBl = RegistroEnfermeriaDetalleBl.Instance;
         private static volatile FactorRiesgoBl _instance;
         private static readonly object SyncRoot = new Object();
 
@@ -50,6 +51,34 @@ namespace ClinicaBussines
                     .Single(c => c.Codigo == codigo);
                 return result;
             }
+        }
+        public List<FactorRiesgo> List(int idPadre)
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from d in context.FactorRiesgos
+                        select d)
+                    .Where(c => c.Padre == idPadre)
+                    .ToList();
+                return result;
+            }
+        }
+        public List<FactorRiesgo> ListModel(int idRegistroIngreso)
+        {
+            var enfermeriaDetalles = _registroEnfermeriaDetalleBl.List(idRegistroIngreso);
+            var factoresPadre = List(0);
+            foreach (var factor in factoresPadre)
+            {
+                factor.IdRegistroIngreso = idRegistroIngreso;
+                factor.FactorRiesgosHijos = new List<FactorRiesgo>();
+                var factoresHijo = List(factor.Id);
+                foreach (var factorHijo in factoresHijo)
+                {
+                    factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id).Select(c => c.Valor).ToList();
+                    factor.FactorRiesgosHijos.Add(factorHijo);
+                }
+            }
+            return factoresPadre;
         }
     }
 }

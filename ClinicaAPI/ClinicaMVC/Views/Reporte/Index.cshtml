@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Reporte";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Reportes
+        <small>...</small>
+    </h1>
+    @*<ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>*@
+</section>
+
+<!-- Main content -->
+<section class="content">
+<div class="row">
+    <div class="col-md-4">
+        <a href="@Url.Action("GetFile", "Reporte")" style="color: white">
+        <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
+
+            <div class="info-box-content">
+
+                <span class="info-box-text">Descargar</span>
+
+                <span class="info-box-number">Reporte Cubo</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+        
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
+</section>

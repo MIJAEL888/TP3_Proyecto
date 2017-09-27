@@ -19,8 +19,8 @@ namespace ClinicaData.Migrations
             
             AddColumn("dbo.Usuario", "NombreUsuario", c => c.String());
             AddColumn("dbo.Usuario", "CorreoUsuario", c => c.String());
-            AddColumn("dbo.Usuario", "IdRolUsuario", c => c.Int(nullable: false));
-            AddColumn("dbo.Usuario", "IdPersona", c => c.Int(nullable: false));
+            AddColumn("dbo.Usuario", "IdRolUsuario", c => c.Int(nullable: true));
+            AddColumn("dbo.Usuario", "IdPersona", c => c.Int(nullable: true));
             CreateIndex("dbo.Usuario", "IdRolUsuario");
             CreateIndex("dbo.Usuario", "IdPersona");
             AddForeignKey("dbo.Usuario", "IdPersona", "dbo.Persona", "Id", cascadeDelete: false);

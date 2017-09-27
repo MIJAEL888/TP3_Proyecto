@@ -45,6 +45,8 @@ namespace ClinicaBussines
             return registroEnfermeria;
         }
 
+
+
         public int SaveDetails(RegistroEnfermeriaModel registroEnfermeriaModel)
         {
             var registroEnfermeria = new RegistroEnfermeria

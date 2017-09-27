@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,6 +45,15 @@ namespace ClinicaUtil
         public class NombreSession
         {
             public const string Usuario = "UsuarioData";
+        }
+
+        public class NivelCriticidad
+        {
+            public const string Observacion = "OBS";
+            public const string VigilanciaActiva = "VA";
+            public const string VigilanciaIntensiva = "VI";
+            public const string TerapeuticaIntensiva = "TI";
+
         }
     }
 }

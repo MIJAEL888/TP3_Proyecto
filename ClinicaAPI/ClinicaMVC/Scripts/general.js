@@ -73,7 +73,30 @@
             return false;
         }
     });
+    $("#buscar-paciente").click(function () {
+        BuscarPacientes($("#nombre-paciente").val());
+    });
+    BuscarPacientes();
 });
+
+function BuscarPacientes(name) {
+    if ($('#ListaPaciente').length > 0) {
+        if (name === undefined) {
+            name = "";
+        }
+        $.ajax({
+            url: "/RegistroIngreso/GetPacientes",
+            method: "GET",
+            data: { name: name}
+        })
+        .done(function (data) {
+            $("#ListaPaciente").html(data);
+        })
+        .fail(function (data) {
+            toastr.error(data);
+        });
+    }
+}
 
 function BuscarCama(idSolicitud) {
     $("#IdCitaAnular").val(idSolicitud);
@@ -207,4 +230,93 @@ function objectifyForm(formArray) {//serialize data function
         returnArray[formArray[i]['name']] = formArray[i]['value'];
     }
     return returnArray;
+}
+
+function VerDetalleRegistro(idRegistroIngreso) {
+    $("#modalDetalleRegistroEnf").modal("show");
+    for (var i = 0; i < 4; i++) {
+        $("#content-chart" + i).remove();
+    }
+    $.ajax({
+        url: "/RegEnfermeria/GetValuesFactor",
+        method: "post",
+        data: {
+            idRegistroIngreso: idRegistroIngreso
+        }
+    })
+        .done(function (data) {
+
+            $.each(data, function (key, value) {
+                $("#content-chart").clone().prop('id', 'content-chart' + key).insertBefore("#content-chart");
+                Highcharts.chart('content-chart' + key,
+                    {
+                        title: {
+                            text: "Monitreo: " + value.Nombre
+                        },
+
+                        yAxis: [{ // left y axis
+                            title: {
+                                text: null
+                            },
+                            labels: {
+                                align: 'left',
+                                x: 3,
+                                y: 16,
+                                format: '{value:.,0f}'
+                            },
+                            showFirstLabel: false
+                        }, { // right y axis
+                            linkedTo: 0,
+                            gridLineWidth: 0,
+                            opposite: true,
+                            title: {
+                                text: null
+                            },
+                            labels: {
+                                align: 'right',
+                                x: -3,
+                                y: 16,
+                                format: '{value:.,0f}'
+                            },
+                            showFirstLabel: false
+                        }],
+                        legend: {
+                            align: 'left',
+                            verticalAlign: 'top',
+                            y: 20,
+                            floating: true,
+                            borderWidth: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            crosshairs: true
+                        },
+                        plotOptions: {
+                            series: {
+                                pointStart: 1
+                            }
+                        },
+
+                        series: GetArrayValues(value.FactorRiesgosHijos)
+                    });
+                
+            });
+            
+        })
+        .fail(function () {
+            toastr.error("Ocurrio un error durante el proceso.");
+        });
+
+}
+function GetArrayValues(series) {
+    var jsonObj = [];
+    $.each(series, function (key, value) {
+
+        var item = {};
+        item["name"] = value.Codigo;
+        item["data"] = value.Values;
+        jsonObj.push(item);
+    });
+    return jsonObj;
+
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace ClinicaBussines
 {
     public class RegistroEnfermeriaDetalleBl
     {
-
         private static volatile RegistroEnfermeriaDetalleBl _instance;
         private static readonly object SyncRoot = new Object();
 
@@ -40,5 +40,25 @@ namespace ClinicaBussines
                 context.SaveChanges();
             }
         }
+
+        public List<RegistroEnfermeriaDetalle> List(int idRegistroIngreso)
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from d in context.RegistroEnfermeriaDetalles
+                            join r in context.RegistroEnfermerias on d.IdRegistroEnfermeria equals r.Id
+                            join i in context.IngresoSalidaPacientes on r.IdIngresoSalidaPaciente equals i.Id
+                            join f in context.FactorRiesgos on d.IdFactorRiesgo equals f.Id
+                            join n in context.NivelCriticidades on d.IdNivelCriticidad equals n.Id 
+                            select d)
+                    .Include(c => c.RegistroEnfermeria).Include(c => c.RegistroEnfermeria.IngresoSalidaPaciente)
+                    .Include(c => c.FactorRiesgo).Include(e => e.NivelCriticidad)
+                    .Where(c => c.RegistroEnfermeria.IdIngresoSalidaPaciente == idRegistroIngreso)
+                    .ToList();
+                return result;
+            }
+        }
+
+        
     }
 }

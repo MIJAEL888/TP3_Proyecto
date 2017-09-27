@@ -692,7 +692,7 @@ namespace ClinicaData.Migrations
                 },
                 new NivelCriticidad
                 {
-                    Id = 3,
+                    Id = 4,
                     Nombre = "Terapéutica Intensiva",
                     Codigo = "TI",
                     Descripcion = "Terapéutica Intensiva"

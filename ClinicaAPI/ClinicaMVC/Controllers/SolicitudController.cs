@@ -11,7 +11,7 @@ using ClinicaUtil;
 namespace ClinicaMVC.Controllers
 {
     [SessionFilter]
-    public class SolicitudController : Controller
+    public class SolicitudController : BaseController
     {
         readonly SolicitudBl _solicitudBl = SolicitudBl.Instance;
         readonly CamaBl _camaBl = CamaBl.Instance;
