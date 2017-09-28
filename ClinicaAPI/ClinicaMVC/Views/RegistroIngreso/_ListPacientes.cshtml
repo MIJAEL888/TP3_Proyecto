@@ -55,8 +55,8 @@
                     <div class="col-md-2">
                         @if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Doctor)
                         {
-                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="javaScript:;">Generar Diagnostico</button>
-                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="javaScript:;">Ver Historial</button>
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="NuevoDiagnostico(@item.Id)">Generar Diagnostico</button>
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="VerDiagnostico(@item.Id)">Ver Historial</button>
                         }
                         else if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Enfermera)
                         {

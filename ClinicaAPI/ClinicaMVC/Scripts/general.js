@@ -248,9 +248,12 @@ function VerDetalleRegistro(idRegistroIngreso) {
         .done(function (data) {
 
             $.each(data, function (key, value) {
-                $("#content-chart").clone().prop('id', 'content-chart' + key).insertBefore("#content-chart");
+                $("#content-chart").clone().prop('id', 'content-chart' + key).addClass("margin-bottom").insertBefore("#content-chart");
                 Highcharts.chart('content-chart' + key,
                     {
+                        chart: {
+                            marginBottom: 55
+                        },
                         title: {
                             text: "Monitreo: " + value.Nombre
                         },
@@ -284,8 +287,8 @@ function VerDetalleRegistro(idRegistroIngreso) {
                             showFirstLabel: false
                         }],
                         legend: {
-                            align: 'left',
-                            verticalAlign: 'top',
+                            align: 'center',
+                            verticalAlign: 'bottom',
                             y: 20,
                             floating: true,
                             borderWidth: 0
@@ -294,6 +297,7 @@ function VerDetalleRegistro(idRegistroIngreso) {
                             shared: true,
                             crosshairs: true
                         },
+                        
                         //plotOptions: {
                         //    series: {
                         //        pointStart: 1
@@ -332,4 +336,13 @@ function GetArrayCategories(registros) {
     });
     return jsonObj;
 
+}
+
+
+function NuevoDiagnostico(id) {
+    $("modalNuevoDiagnostico").modal("show");
+}
+
+function VerDiagnostico(id) {
+    $("modalVerDiagnostico").modal("show");
 }
