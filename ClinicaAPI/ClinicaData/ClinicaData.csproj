@@ -84,6 +84,10 @@
     <Compile Include="Migrations\201709232339234_AddUsuarioRol.Designer.cs">
       <DependentUpon>201709232339234_AddUsuarioRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709290047021_AddDiagnosticoGravedad.cs" />
+    <Compile Include="Migrations\201709290047021_AddDiagnosticoGravedad.Designer.cs">
+      <DependentUpon>201709290047021_AddDiagnosticoGravedad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709232339234_AddUsuarioRol.resx">
       <DependentUpon>201709232339234_AddUsuarioRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290047021_AddDiagnosticoGravedad.resx">
+      <DependentUpon>201709290047021_AddDiagnosticoGravedad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

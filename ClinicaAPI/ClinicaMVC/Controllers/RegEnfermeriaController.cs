@@ -81,7 +81,7 @@ namespace ClinicaMVC.Controllers
 
         public JsonResult GetValuesFactor(int idRegistroIngreso)
         {
-            return Json(_factorRiesgoBl.ListModel(idRegistroIngreso));
+            return Json(_factorRiesgoBl.ListByValue(idRegistroIngreso));
         }
     }
 }

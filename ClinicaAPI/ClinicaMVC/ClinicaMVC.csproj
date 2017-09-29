@@ -163,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\DiagnosticoGravedadViewModel.cs" />
     <Compile Include="Models\RegistroIngresoViewModel.cs" />
     <Compile Include="Models\UsuarioViewModel.cs" />
     <Compile Include="Models\RegEnfermeriaViewModel.cs" />
@@ -1999,6 +2000,8 @@
     <Content Include="Views\DiagnosticoGravedad\Index.cshtml" />
     <Content Include="Views\RegistroIngreso\_ListPacientes.cshtml" />
     <Content Include="Views\RegistroIngreso\Index.cshtml" />
+    <Content Include="Views\DiagnosticoGravedad\Nuevo.cshtml" />
+    <Content Include="Views\DiagnosticoGravedad\Detalle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

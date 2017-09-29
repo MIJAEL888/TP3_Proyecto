@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CamaBl.cs" />
     <Compile Include="CitaBl.cs" />
+    <Compile Include="DiagnosticoGravedadBl.cs" />
     <Compile Include="DoctorBl.cs" />
     <Compile Include="FactorRiesgoBl.cs" />
     <Compile Include="FactorRiesgoCriticidadBl.cs" />

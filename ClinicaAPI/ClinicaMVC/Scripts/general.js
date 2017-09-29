@@ -338,11 +338,78 @@ function GetArrayCategories(registros) {
 
 }
 
+function NuevoDiagnostico(idRegistroIngreso) {
 
-function NuevoDiagnostico(id) {
-    $("modalNuevoDiagnostico").modal("show");
+    $("#modalNuevoDiagnostico").modal("show");
+
+
+    for (var i = 0; i < 4; i++) {
+        $("#content-chart" + i).remove();
+    }
+    $.ajax({
+        url: "/DiagnosticoGravedad/GetValuesCriticidad",
+        method: "post",
+        data: {
+            idRegistroIngreso: idRegistroIngreso
+        }
+    })
+    .done(function (data) {
+
+        $.each(data, function (key, value) {
+            $("#content-chart").clone().prop('id', 'content-chart' + key).addClass("margin-bottom").insertBefore("#content-chart");
+            Highcharts.chart('content-chart' + key,
+                {
+                    chart: {
+                        type: 'column',
+                       
+                    },
+                    title: {
+                        text: "Monitreo: " + value.Nombre
+                    },
+                    xAxis: {
+                        categories: GetArrayCategoriesDiag(value.FactorRiesgosHijos)
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Porcentaje de sucesos'
+                        }
+                    },
+                    legend: {
+                        reversed: true
+                    },
+                    plotOptions: {
+                        series: {
+                            stacking: 'percent'
+                        }
+                    },
+                    series: GetArrayValuesDiag(value.NivelCriticidades)
+                });
+
+        });
+
+    })
+    .fail(function () {
+        toastr.error("Ocurrio un error durante el proceso.");
+    });
 }
-
+function GetArrayValuesDiag(criticiades) {
+    var jsonObj = [];
+    $.each(criticiades, function (key, value) {
+        var item = {};
+        item["name"] = value.Nombre;
+        item["data"] = value.Values;
+        jsonObj.push(item);
+    });
+    return jsonObj;
+}
+function GetArrayCategoriesDiag(factores) {
+    var jsonObj = [];
+    $.each(factores, function (key, value) {
+        jsonObj.push(value.Codigo);
+    });
+    return jsonObj;
+}
 function VerDiagnostico(id) {
-    $("modalVerDiagnostico").modal("show");
+    $("#modalVerDiagnostico").modal("show");
 }

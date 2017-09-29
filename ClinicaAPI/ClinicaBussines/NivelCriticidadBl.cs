@@ -64,5 +64,18 @@ namespace ClinicaBussines
                 return result;
             }
         }
+
+        public List<NivelCriticidad> List()
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from i in context.NivelCriticidades
+                        select i)
+                    .ToList();
+                return result;
+            }
+        }
+
+
     }
 }

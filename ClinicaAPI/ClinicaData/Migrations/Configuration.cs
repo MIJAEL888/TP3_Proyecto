@@ -1644,7 +1644,7 @@ namespace ClinicaData.Migrations
                     Contrasenia = "123456",
                     FechaCreacion = DateTime.Now,
                     IdRolUsuario = 1,
-                    IdPersona = 5
+                    IdEmpleado = 1
                 },
                 new Usuario
                 {
@@ -1654,7 +1654,7 @@ namespace ClinicaData.Migrations
                     Contrasenia = "123456",
                     FechaCreacion = DateTime.Now,
                     IdRolUsuario = 2,
-                    IdPersona = 4
+                    IdEmpleado = 3
                 }
             );
         }

@@ -23,8 +23,8 @@ namespace ClinicaEntity
         public int IdRolUsuario { get; set; }
         public RolUsuario RolUsuario { get; set; }
 
-        [ForeignKey("Persona")]
-        public int IdPersona { get; set; }
-        public Persona Persona { get; set; }
+        [ForeignKey("Empleado")]
+        public int IdEmpleado { get; set; }
+        public Empleado Empleado { get; set; }
     }
 }

@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ClinicaData;
 using ClinicaEntity;
+using ClinicaUtil;
 
 namespace ClinicaBussines
 {
     public class FactorRiesgoBl
     {
         readonly RegistroEnfermeriaDetalleBl _registroEnfermeriaDetalleBl = RegistroEnfermeriaDetalleBl.Instance;
+        readonly NivelCriticidadBl _nivelCriticidadBl = NivelCriticidadBl.Instance;
         private static volatile FactorRiesgoBl _instance;
         private static readonly object SyncRoot = new Object();
 
@@ -63,7 +65,7 @@ namespace ClinicaBussines
                 return result;
             }
         }
-        public List<FactorRiesgo> ListModel(int idRegistroIngreso)
+        public List<FactorRiesgo> ListByValue(int idRegistroIngreso)
         {
             var enfermeriaDetalles = _registroEnfermeriaDetalleBl.List(idRegistroIngreso);
             var factoresPadre = List(0);
@@ -80,6 +82,32 @@ namespace ClinicaBussines
                 factor.RegistroEnfermerias = enfermeriaDetalles.GroupBy(item => item.IdRegistroEnfermeria)
                 .Select(group => group.First().RegistroEnfermeria)
                 .ToList();
+            }
+            return factoresPadre;
+        }
+
+        public List<FactorRiesgo> ListByCriticidad(int idRegistroIngreso)
+        {
+            var enfermeriaDetalles = _registroEnfermeriaDetalleBl.List(idRegistroIngreso);
+            var factoresPadre = List(0);
+            foreach (var factor in factoresPadre)
+            {
+                factor.IdRegistroIngreso = idRegistroIngreso;
+                factor.FactorRiesgosHijos = new List<FactorRiesgo>();
+                factor.NivelCriticidades = new List<NivelCriticidad>();
+                var nivelCriticidades = _nivelCriticidadBl.List();
+                var factoresHijo = List(factor.Id);
+                foreach (var criticidad in nivelCriticidades)
+                {
+                    criticidad.Values = new List<int>();
+                    foreach (var factorHijo in factoresHijo)
+                    {
+                        criticidad.Values.Add(enfermeriaDetalles.Count(c => c.IdFactorRiesgo == factorHijo.Id && 
+                                                          c.IdNivelCriticidad == criticidad.Id));
+                    }
+                    factor.NivelCriticidades.Add(criticidad);
+                }
+                factor.FactorRiesgosHijos =  factoresHijo;
             }
             return factoresPadre;
         }

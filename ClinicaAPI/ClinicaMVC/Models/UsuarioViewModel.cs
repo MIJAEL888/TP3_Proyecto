@@ -10,5 +10,6 @@ namespace ClinicaMVC.Models
         public string NombreUsuario { get; set; }
         public string CorreoUsuario { get; set; }
         public string Contrasenia { get; set; }
+
     }
 }

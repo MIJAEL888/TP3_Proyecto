@@ -45,6 +45,7 @@
     <Compile Include="Cama.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Diagnostico.cs" />
+    <Compile Include="DiagnosticoGravedad.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="FactorRiesgo.cs" />
