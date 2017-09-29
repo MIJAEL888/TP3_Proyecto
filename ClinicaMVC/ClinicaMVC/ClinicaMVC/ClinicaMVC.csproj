@@ -147,6 +147,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterconsultaController.cs" />
     <Compile Include="Controllers\SolicitudController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,6 +156,8 @@
     <Compile Include="Models\CitaViewModel.cs" />
     <Compile Include="Models\Entities\Doctor.cs" />
     <Compile Include="Models\Entities\Estados.cs" />
+    <Compile Include="Models\Entities\InterconsultaBody.cs" />
+    <Compile Include="Models\Entities\InterconsultaHead.cs" />
     <Compile Include="Models\InListTurnoModel.cs" />
     <Compile Include="Models\InReservaTurnoModel.cs" />
     <Compile Include="Models\OutListaTurnosModel.cs" />
@@ -317,6 +320,7 @@
     <Content Include="Views\Citas\Nueva.cshtml" />
     <Content Include="Views\Citas\ListTurnos.cshtml" />
     <Content Include="Views\Solicitud\Index.cshtml" />
+    <Content Include="Views\Interconsulta\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
