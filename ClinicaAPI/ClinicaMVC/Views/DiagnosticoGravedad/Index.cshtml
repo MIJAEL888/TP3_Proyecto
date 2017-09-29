@@ -1,0 +1,72 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Diagnostico de gravedad";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Diagnostico Gravedad 
+        <small>...</small>
+    </h1>
+    @*<ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>*@
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" id="nombre-paciente">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-flat" id="buscar-paciente">Buscar paciente</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="clearfix"></div>
+    <div id="ListaPaciente"></div>
+</section>
+
+<div id="modalNuevoDiagnostico" class="modal fade bs-example-modal-lg" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Agregar Detalle del registro de enfermeria. </h4>
+            </div>
+            <div class="modal-body">
+                <div id="content-chart"></div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" onclick="EnviarFormularioRegEnf()">Aceptar</a>
+                <a href="#" class="btn btn-primary" onclick="closeModal('#modalNuevoRegistroEnf')">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalVerDiagnostico" class="modal fade bs-example-modal-lg" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Detalle de registro de enfermenria: </h4>
+            </div>
+            <div class="modal-body">
+               
+
+            </div>
+            <div class="modal-footer">
+                @*<a href="#" class="btn btn-default" onclick="EnviarFormularioRegEnf()">Aceptar</a>*@
+                <a href="#" class="btn btn-primary" onclick="closeModal('#modalDetalleRegistroEnf')">Cerrar</a>
+            </div>
+        </div>
+    </div>
+</div>

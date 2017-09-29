@@ -1,1 +1,199 @@
 ﻿
+@model ClinicaMVC.Models.RegEnfermeriaViewModel
+
+<div class="row">
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>Paciente: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.Paciente.Nombre</dd>
+            <dt>Fecha Ingreso: </dt>
+            <dd>@Model.IngresoSalidaPaciente.FechaIngreso</dd>
+            <dt>Cama: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Cama.Descripcion</dd>
+            <dt>Alimentacion: </dt>
+            <dd>Ligera<dd>
+            <dt>Grupo Sangineo: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.GrupoSangineo</dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>Diagnostico: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.Diagnostico.Nombre </dd>
+            <dt>Tratamiento: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.Tratamiento.Nombre</dd>
+            <dt>Talla: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.Talla</dd>
+            <dt>Peso: </dt>
+            <dd>@Model.IngresoSalidaPaciente.Solicitud.HistoriaClinica.Peso<dd>
+        </dl>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form id="formRegistroEnfermeria" class="form-horizontal">
+            @Html.HiddenFor(m => m.IdIngresoSalidaPaciente)
+            <fieldset>
+                <legend>Monitoreo Hermodinamico:</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmTemperatura, "Temperatura :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmTemperatura, null, new {placeholder = "Temperatura", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmRitmoCard, "Ritmo Card. :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmRitmoCard, null, new {placeholder = "Ritmo Cardiaco", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmPsPd, "PS/PD :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmPsPd, null, new {placeholder = "PS/PD", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmPam, "PAM :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmPam, null, new {placeholder = "PAM", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmPcmPap, "PCP/PAP :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmPcmPap, null, new {placeholder = "PCP/PAP", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HrmGcIc, "GC/IC :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HrmGcIc, null, new {placeholder = "GC/IC", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Monitoreo Respiratorio:</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespModalidad, "Modalidad :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespModalidad, null, new {placeholder = "Modalidad", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespVc, "VC. :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespVc, null, new {placeholder = "VC", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespFio2, "FiO2/Flujo :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespFio2, null, new {placeholder = "FiO2/Flujo", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespFr, "F. R. :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespFr, null, new {placeholder = "F. R.", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespPeeps, "PEEPS/PS :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespPeeps, null, new {placeholder = "PEEPS/PS", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RespSatO2, "SAT O2 :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.RespSatO2, null, new {placeholder = "SAT O2", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Monitoreo Neurologico:</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroPupila, "Pupilas :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroPupila, null, new {placeholder = "Pupilas", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroEstadoConc, "Estado Cons. :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroEstadoConc, null, new {placeholder = "Estado Conciencia", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroGlosgow, "Glosgow :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroGlosgow, null, new {placeholder = "Glosgow", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroRamsay, "Ramsay :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroRamsay, null, new {placeholder = "Ramsay", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroMotSd, "Motidad SD :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroMotSd, null, new {placeholder = "Motidad SD", @class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.NeuroMotSi, "Motidad SI :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.NeuroMotSi, null, new {placeholder = "Motidad SI", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Monitoreo Hídirico:</legend>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HidriIngresos, "Ingresos :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HidriIngresos, null, new {placeholder = "Ingresos", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HidriEgresos, "Egresos :", new {@class = "col-sm-5 control-label"})
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(m => m.HidriEgresos, null, new {placeholder = "Egresos", @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            @*<button type="submit" class="btn btn-info pull-right">Actualizar</button>*@
+            <!-- /.box-body -->
+            @*<div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+            </div>*@
+            <!-- /.box-footer -->
+        </form>
+    </div>
+</div>

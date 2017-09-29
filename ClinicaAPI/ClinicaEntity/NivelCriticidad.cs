@@ -17,5 +17,8 @@ namespace ClinicaEntity
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Codigo { get; set; }
+
+        [NotMapped]
+        public List<int> Values { get; set; }
     }
 }

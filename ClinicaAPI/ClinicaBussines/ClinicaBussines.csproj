@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,9 +52,15 @@
   <ItemGroup>
     <Compile Include="CamaBl.cs" />
     <Compile Include="CitaBl.cs" />
+    <Compile Include="DiagnosticoGravedadBl.cs" />
     <Compile Include="DoctorBl.cs" />
+    <Compile Include="FactorRiesgoBl.cs" />
+    <Compile Include="FactorRiesgoCriticidadBl.cs" />
+    <Compile Include="NivelCriticidadBl.cs" />
     <Compile Include="PacienteBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroEnfermeriaBl.cs" />
+    <Compile Include="RegistroEnfermeriaDetalleBl.cs" />
     <Compile Include="RegistroIngresoBl.cs" />
     <Compile Include="SolicitudBl.cs" />
     <Compile Include="TipoAtencionBl.cs" />

@@ -15,7 +15,20 @@ namespace ClinicaEntity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime FechaRegistro { get; set; }
-        public string Observacion { get; set; }
-        public string Antecedentes { get; set; }
+        public int Valor { get; set; }
+        public string ValorString { get; set; }
+
+        [ForeignKey("RegistroEnfermeria")]
+        public int IdRegistroEnfermeria { get; set; }
+        public RegistroEnfermeria RegistroEnfermeria { get; set; }
+
+        [ForeignKey("FactorRiesgo")]
+        public int IdFactorRiesgo { get; set; }
+        public FactorRiesgo FactorRiesgo { get; set; }
+
+        [ForeignKey("NivelCriticidad")]
+        public int IdNivelCriticidad { get; set; }
+        public NivelCriticidad NivelCriticidad { get; set; }
+
     }
 }

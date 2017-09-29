@@ -1,4 +1,5 @@
-﻿using ClinicaData;
+﻿using System;
+using ClinicaData;
 using ClinicaEntity;
 using ClinicaUtil;
 using System.Collections.Generic;
@@ -9,6 +10,27 @@ namespace ClinicaBussines
 {
     public class CitaBl
     {
+        private static volatile CitaBl _instance;
+        private static readonly object SyncRoot = new Object();
+
+        private CitaBl() { }
+
+        public static CitaBl Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (SyncRoot)
+                    {
+                        if (_instance == null)
+                            _instance = new CitaBl();
+                    }
+                }
+                return _instance;
+            }
+        }
+
         public List<Cita> List()
         {
             using (var context = new DataContext())

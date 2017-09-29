@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace ClinicaMVC.Controllers
 {
-    public class HomeController : Controller
+    [SessionFilter]
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

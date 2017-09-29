@@ -24,5 +24,16 @@ namespace ClinicaEntity
         public string Grupo { get; set; }
         public TipoUnidades CodUnidades { get; set; }
         public int Padre { get; set; }
+
+        [NotMapped]
+        public List<FactorRiesgo> FactorRiesgosHijos { get; set; }
+        [NotMapped]
+        public List<int> Values { get; set; }
+        [NotMapped]
+        public int IdRegistroIngreso { get; set; }
+        [NotMapped]
+        public List<RegistroEnfermeria> RegistroEnfermerias { get; set; }
+        [NotMapped]
+        public List<NivelCriticidad> NivelCriticidades { get; set; }
     }
 }

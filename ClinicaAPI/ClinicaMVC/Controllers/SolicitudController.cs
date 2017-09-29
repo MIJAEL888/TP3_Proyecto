@@ -10,10 +10,11 @@ using ClinicaUtil;
 
 namespace ClinicaMVC.Controllers
 {
-    public class SolicitudController : Controller
+    [SessionFilter]
+    public class SolicitudController : BaseController
     {
-        readonly SolicitudBl _solicitudBl = new SolicitudBl();
-        readonly CamaBl _camaBl = new CamaBl();
+        readonly SolicitudBl _solicitudBl = SolicitudBl.Instance;
+        readonly CamaBl _camaBl = CamaBl.Instance;
 
         // GET: Solicitud
         public ActionResult Index()

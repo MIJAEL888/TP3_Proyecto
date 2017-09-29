@@ -18,8 +18,11 @@ namespace ClinicaEntity
         public string Observacion { get; set; }
         public string Antecedentes { get; set; }
 
-        [ForeignKey("HistoriaClinica")]
-        public int IdHistoriaClinica { get; set; }
-        public HistoriaClinica HistoriaClinica { get; set; }
+        [ForeignKey("IngresoSalidaPaciente")]
+        public int IdIngresoSalidaPaciente { get; set; }
+        public IngresoSalidaPaciente IngresoSalidaPaciente { get; set; }
+
+        [NotMapped]
+        public string FechaRegistroString => FechaRegistro.ToString("dd HH:mm");
     }
 }

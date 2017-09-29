@@ -45,6 +45,7 @@
     <Compile Include="Cama.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Diagnostico.cs" />
+    <Compile Include="DiagnosticoGravedad.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="FactorRiesgo.cs" />
@@ -58,8 +59,12 @@
     <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroEnfermeria.cs" />
+    <Compile Include="RegistroEnfermeriaDetalleModel.cs" />
     <Compile Include="RegistroEnfermeriaDetalle.cs" />
+    <Compile Include="RegistroEnfermeriaModel.cs" />
+    <Compile Include="RolUsuario.cs" />
     <Compile Include="Sala.cs" />
+    <Compile Include="Serie.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="TipoAtencion.cs" />
     <Compile Include="Tratamiento.cs" />

@@ -12,6 +12,27 @@ namespace ClinicaBussines
 {
     public class SolicitudBl
     {
+        private static volatile SolicitudBl _instance;
+        private static readonly object SyncRoot = new Object();
+
+        private SolicitudBl() { }
+
+        public static SolicitudBl Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (SyncRoot)
+                    {
+                        if (_instance == null)
+                            _instance = new SolicitudBl();
+                    }
+                }
+                return _instance;
+            }
+        }
+
         public List<Solicitud> List()
         {
             using (var context = new DataContext())

@@ -1,0 +1,74 @@
+﻿@using ClinicaEntity
+@using ClinicaUtil
+@model ClinicaMVC.Models.RegistroIngresoViewModel
+@{
+    Usuario usuario = ViewBag.Usuario ?? new Usuario();
+}
+@foreach (var item in Model.IngresoSalidaPacientes)
+{
+    var classBgIcon = "";
+
+    if (item.Solicitud.HistoriaClinica.NivelCriticidad.Codigo.Equals(Constantes.NivelCriticidad.Observacion))
+    {
+        classBgIcon = "bg-green";
+    }
+    else if (item.Solicitud.HistoriaClinica.NivelCriticidad.Codigo.Equals(Constantes.NivelCriticidad.VigilanciaActiva))
+    {
+        classBgIcon = "bg-yellow";
+    }
+    else if (item.Solicitud.HistoriaClinica.NivelCriticidad.Codigo.Equals(Constantes.NivelCriticidad.VigilanciaIntensiva))
+    {
+        classBgIcon = "bg-orange";
+    }
+    else if (item.Solicitud.HistoriaClinica.NivelCriticidad.Codigo.Equals(Constantes.NivelCriticidad.TerapeuticaIntensiva))
+    {
+        classBgIcon = "bg-red";
+    }
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Info Boxes Style 1 -->
+            <div class="info-box">
+                <span class="info-box-icon @classBgIcon"><i class="ion ion-android-person"></i></span>
+
+                <div class="info-box-content">
+                    <div class="col-md-5">
+                        <b>Paciente: </b> @item.Solicitud.HistoriaClinica.Paciente.Nombre
+                        <br/>
+                        <b>Diagnostico: </b> @item.Solicitud.HistoriaClinica.Diagnostico.Nombre
+                        <br/>
+                        <b>Tratamiento: </b> @item.Solicitud.HistoriaClinica.Tratamiento.Nombre
+                        <br/>
+                        <b>Cama: </b> @item.Cama.Descripcion
+                        <br/>
+
+                    </div>
+                    <div class="col-md-5">
+                        <b>Nivel Criticidad: </b> @item.Solicitud.HistoriaClinica.NivelCriticidad.Nombre
+                        <br/>
+                        <b>Peso: </b> @item.Solicitud.HistoriaClinica.Peso
+                        <br/>
+                        <b>Talla: </b> @item.Solicitud.HistoriaClinica.Talla
+                        <br/>
+                        <b>G. Sanguineo: </b> @item.Solicitud.HistoriaClinica.GrupoSangineo
+                        <br/>
+                    </div>
+                    <div class="col-md-2">
+                        @if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Doctor)
+                        {
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="NuevoDiagnostico(@item.Id)">Generar Diagnostico</button>
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="VerDiagnostico(@item.Id)">Ver Historial</button>
+                        }
+                        else if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Enfermera)
+                        {
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="NuevoDetalleRegistro(@item.Id)">Agregar Detalle</button>
+                            <button type="button" class="btn btn-block btn-primary btn-xs" onclick="VerDetalleRegistro(@item.Id)">Ver Historial</button>
+                        }
+                        @*<button type="button" class="btn btn-block btn-primary btn-xs">Anular Detalle</button>*@
+                    </div>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+
+        </div>
+    </div>
+}

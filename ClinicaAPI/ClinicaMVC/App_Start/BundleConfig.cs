@@ -27,17 +27,28 @@ namespace ClinicaMVC
                 //"~/Scripts/bootstrap-modal.js",
                 "~/Scripts/bootstrap-datetimepicker.min.js",
                 "~/Scripts/respond.js",
-                "~/scripts/toastr.js",
+                "~/Scripts/toastr.js",
                 "~/Scripts/jquery.validate*",
-                "~/scripts/app.js",
-                "~/scripts/adminlte.js",
-                "~/scripts/general.js"));
+                "~/Scripts/jquery.form.js",
+                "~/Content/plugins/highcharts/highcharts.js",
+                "~/Content/plugins/highcharts/modules/data.js",
+                "~/Content/plugins/highcharts/modules/exporting.js",
+                "~/Scripts/app.js",
+                "~/Scripts/adminlte.js",
+                "~/Scripts/general.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/loginJs").Include(
+                "~/Content/plugins/iCheck/icheck.min.js",
+                "~/Scripts/adminlte.js",
+                "~/Scripts/login.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/css/font-awesome.css",
                       "~/Content/Ionicons/css/ionicons.css",
+                      "~/Content/toastr.css",
                       "~/Content/AdminLTE.css",
+                      "~/Content/iCheck/square/green.css",
                       "~/Content/skins/skin-green.css" )); //"~/Content/site.css"
                      
         }
