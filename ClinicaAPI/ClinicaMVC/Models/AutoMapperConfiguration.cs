@@ -16,9 +16,11 @@ namespace ClinicaMVC.Models
                 x.CreateMap<RegistroEnfermeriaModel, RegEnfermeriaViewModel>();
                 x.CreateMap<RegEnfermeriaViewModel, RegistroEnfermeriaModel>();
 
+                x.CreateMap<DiagnosticoGravedadViewModel, DiagnosticoGravedad>();
+                x.CreateMap<DiagnosticoGravedad, DiagnosticoGravedadViewModel>();
+
                 x.CreateMap<UsuarioViewModel, Usuario>();
                 x.CreateMap<Usuario, UsuarioViewModel>();
-
             });
         }
         

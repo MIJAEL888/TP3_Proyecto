@@ -17,25 +17,29 @@ namespace ClinicaMVC.Controllers
         readonly FactorRiesgoBl _factorRiesgoBl = FactorRiesgoBl.Instance;
         readonly NivelCriticidadBl _nivelCriticidadBl = NivelCriticidadBl.Instance;
         readonly DiagnosticoGravedadBl _diagnosticoGravedadBl = DiagnosticoGravedadBl.Instance;
+        readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
         // GET: DiagnosticoGravedad
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Nuevo()
+        public ActionResult Nuevo(int idRegistroIngreso)
         {
             var model = new DiagnosticoGravedadViewModel
             {
-                NivelCriticidades = _nivelCriticidadBl.List()
+                NivelCriticidades = _nivelCriticidadBl.List(),
+                IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso),
+                IdIngresoSalidaPaciente = idRegistroIngreso
             };
 
-            return View(model);
+            return PartialView(model);
         }
         [HttpPost]
         public ActionResult Save(DiagnosticoGravedadViewModel model)
         {
             try
             {
+                model.IdEmpleado = UsuarioData.IdEmpleado;
                 var diagnosticoGravedad = Mapper.Map<DiagnosticoGravedadViewModel, DiagnosticoGravedad>(model);
                 _diagnosticoGravedadBl.Save(diagnosticoGravedad);
                 return Json("Se guardo la informacion sin problemas.");
@@ -47,14 +51,15 @@ namespace ClinicaMVC.Controllers
             }
         }
 
-        public ActionResult Detalle(int idIngreso)
+        public ActionResult Detalle(int idRegistroIngreso)
         {
             var model = new DiagnosticoGravedadViewModel
             {
-                DiagnosticoGravedades = _diagnosticoGravedadBl.List(idIngreso)
+                DiagnosticoGravedades = _diagnosticoGravedadBl.List(idRegistroIngreso),
+                IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso),
             };
 
-            return View(model);
+            return PartialView(model);
         }
         public JsonResult GetValuesCriticidad(int idRegistroIngreso)
         {

@@ -22,13 +22,11 @@ namespace ClinicaBussines
         {
             get
             {
-                if (_instance == null)
+                if (_instance != null) return _instance;
+                lock (SyncRoot)
                 {
-                    lock (SyncRoot)
-                    {
-                        if (_instance == null)
-                            _instance = new UsuarioBl();
-                    }
+                    if (_instance == null)
+                        _instance = new UsuarioBl();
                 }
                 return _instance;
             }
@@ -49,8 +47,12 @@ namespace ClinicaBussines
             {
                 var result = (from u in context.Usuarios
                               join r in context.RolUsuarios on u.IdRolUsuario equals r.Id
+                              join e in context.Empleados on u.IdEmpleado equals e.Id
+                              join p in context.Personas on e.IdPersona equals p.Id
                               select u)
                     .Include(c => c.RolUsuario)
+                    .Include(c => c.Empleado)
+                    .Include(c => c.Empleado.Persona)
                     .SingleOrDefault(c => c.CorreoUsuario == correoUsuario 
                             && c.Contrasenia == contrasenia);
 

@@ -49,7 +49,7 @@ namespace ClinicaMVC
                       "~/Content/toastr.css",
                       "~/Content/AdminLTE.css",
                       "~/Content/iCheck/square/green.css",
-                      "~/Content/skins/skin-green.css" )); //"~/Content/site.css"
+                      "~/Content/skins/_all-skins.min.css")); //"~/Content/site.css"
                      
         }
     }

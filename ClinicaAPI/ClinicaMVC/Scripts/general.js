@@ -339,10 +339,25 @@ function GetArrayCategories(registros) {
 }
 
 function NuevoDiagnostico(idRegistroIngreso) {
+    $.ajax({
+        url: "/DiagnosticoGravedad/Nuevo",
+        method: "POST",
+        data: {
+            idRegistroIngreso: idRegistroIngreso
+        }
+    })
+    .done(function (data) {
+        $("#content-form-diag").html(data);
+        $("#modalNuevoDiagnostico").modal('show');
+        CreateChart(idRegistroIngreso);
+            ValidateFormDiagnostico();
+        })
+    .fail(function (data) {
+        toastr.error(data);
+    });
+}
 
-    $("#modalNuevoDiagnostico").modal("show");
-
-
+function CreateChart(idRegistroIngreso) {
     for (var i = 0; i < 4; i++) {
         $("#content-chart" + i).remove();
     }
@@ -361,7 +376,7 @@ function NuevoDiagnostico(idRegistroIngreso) {
                 {
                     chart: {
                         type: 'column',
-                       
+
                     },
                     title: {
                         text: "Monitreo: " + value.Nombre
@@ -410,6 +425,44 @@ function GetArrayCategoriesDiag(factores) {
     });
     return jsonObj;
 }
-function VerDiagnostico(id) {
-    $("#modalVerDiagnostico").modal("show");
+function VerDiagnostico(idRegistroIngreso) {
+    $.ajax({
+            url: "/DiagnosticoGravedad/Detalle",
+            method: "POST",
+            data: {
+                idRegistroIngreso: idRegistroIngreso
+            }
+        })
+        .done(function (data) {
+            $("#modalVerDiagnostico").find(".modal-body").html(data);
+            $("#modalVerDiagnostico").modal('show');
+        })
+        .fail(function (data) {
+            toastr.error(data);
+        });
+}
+
+function EnviarFormDiagnstico() {
+    $("#formDiagnosticoGravedad").submit();
+}
+
+function ValidateFormDiagnostico() {
+    $("#formDiagnosticoGravedad").validate({
+        submitHandler: function (form) {
+            $.ajax({
+                url: "/DiagnosticoGravedad/Save",
+                    method: "post",
+                    data: objectifyForm($(form).serializeArray())
+                })
+                .done(function (data) {
+                    $("#modalNuevoDiagnostico").modal('hide');
+                    BuscarPacientes();
+                    toastr.success("Se guardo el registro.");
+                })
+                .fail(function () {
+                    toastr.error("Ocurrio un error durante el Proceso.");
+                });
+            return false;
+        }
+    });
 }

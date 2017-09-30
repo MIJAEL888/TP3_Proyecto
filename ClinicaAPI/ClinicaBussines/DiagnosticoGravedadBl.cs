@@ -11,6 +11,8 @@ namespace ClinicaBussines
 {
     public class DiagnosticoGravedadBl
     {
+        readonly HistoriaClinicaBl _historiaClinicaBl = HistoriaClinicaBl.Instance;
+        readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
         private static volatile DiagnosticoGravedadBl _instance;
         private static readonly object SyncRoot = new Object();
 
@@ -59,8 +61,17 @@ namespace ClinicaBussines
         }
         public DiagnosticoGravedad Save(DiagnosticoGravedad diagnosticoGravedad)
         {
+            diagnosticoGravedad.FechaRegistro = DateTime.Now;
+            var ingresoSalidaPaciente = _registroIngresoBl.Get(diagnosticoGravedad.IdIngresoSalidaPaciente);
             using (var context = new DataContext())
             {
+                var historiaDb = context.HistoriaClinicas.Find(ingresoSalidaPaciente.Solicitud.IdHistoriaClinica);
+                if (historiaDb != null)
+                {
+                    historiaDb.IdNivelCriticidad = diagnosticoGravedad.IdNivelCriticidad;
+                    _historiaClinicaBl.Update(historiaDb);
+                }
+
                 context.DiagnosticoGravedades.Add(diagnosticoGravedad);
                 context.SaveChanges();
             }

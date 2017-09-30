@@ -11,21 +11,14 @@ namespace ClinicaMVC.Controllers
 {
     public class InterconsultaController : Controller
     {
-        readonly RegistroIngresoBl _registroIngresoBl = new RegistroIngresoBl();
         // GET: 
-        public ActionResult Index()
-        {
-            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel();
-            model.IngresoSalidaPacientes = _registroIngresoBl.List((int)EstadoRegistroIngreso.Activado);
-            return View(model);
-        }
-
-        public ActionResult Nuevo()
-        {
-            RegEnfermeriaViewModel model = new RegEnfermeriaViewModel();
-
-            return PartialView(model);
-        }
-
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+        //public ActionResult Nuevo()
+        //{
+        //    return PartialView();
+        //}
     }
 }

@@ -38,15 +38,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Agregar Detalle del registro de enfermeria. </h4>
+                <h4 class="modal-title">Agregar el dignostico del paciente. </h4>
             </div>
             <div class="modal-body">
+                <div id="content-form-diag"></div>
                 <div id="content-chart"></div>
 
             </div>
             <div class="modal-footer">
-                <a href="#" class="btn btn-default" onclick="EnviarFormularioRegEnf()">Aceptar</a>
-                <a href="#" class="btn btn-primary" onclick="closeModal('#modalNuevoRegistroEnf')">Cancelar</a>
+                <a href="#" class="btn btn-default" onclick="EnviarFormDiagnstico()">Aceptar</a>
+                <a href="#" class="btn btn-primary" onclick="closeModal('#modalNuevoDiagnostico')">Cancelar</a>
             </div>
         </div>
     </div>
@@ -57,7 +58,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Detalle de registro de enfermenria: </h4>
+                <h4 class="modal-title">Detalle de los diagnosticos: </h4>
             </div>
             <div class="modal-body">
                
@@ -65,7 +66,7 @@
             </div>
             <div class="modal-footer">
                 @*<a href="#" class="btn btn-default" onclick="EnviarFormularioRegEnf()">Aceptar</a>*@
-                <a href="#" class="btn btn-primary" onclick="closeModal('#modalDetalleRegistroEnf')">Cerrar</a>
+                <a href="#" class="btn btn-primary" onclick="closeModal('#modalVerDiagnostico')">Cerrar</a>
             </div>
         </div>
     </div>

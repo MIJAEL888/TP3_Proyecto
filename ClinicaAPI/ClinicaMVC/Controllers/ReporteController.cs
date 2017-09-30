@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper.XpressionMapper;
+using ClinicaMVC.Properties;
 
 namespace ClinicaMVC.Controllers
 {
@@ -17,9 +19,8 @@ namespace ClinicaMVC.Controllers
 
         public ActionResult GetFile()
         {
-            byte[] fileBytes = System.IO.File.ReadAllBytes(@"D:\SeguimientoPlanEjecucion.xlsx");
-            string fileName = "SeguimientoPlanEjecucion.xlsx";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            string fileName = "ReporteCubo.xlsx";
+            return File(Resources.PowerPivot, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
     }
 }

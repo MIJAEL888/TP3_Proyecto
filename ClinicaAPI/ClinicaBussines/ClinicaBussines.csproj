@@ -56,6 +56,7 @@
     <Compile Include="DoctorBl.cs" />
     <Compile Include="FactorRiesgoBl.cs" />
     <Compile Include="FactorRiesgoCriticidadBl.cs" />
+    <Compile Include="HistoriaClinicaBl.cs" />
     <Compile Include="NivelCriticidadBl.cs" />
     <Compile Include="PacienteBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

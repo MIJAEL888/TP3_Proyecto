@@ -113,6 +113,71 @@ namespace ClinicaData.Migrations
                     TipoDocumento = "DNI",
                     Telefono = "123456",
                     Sexo = "M"
+                },
+                new Paciente
+                {
+                    Id = 6,
+                    Nombre = "Nombre paciente 6",
+                    FechaNacimiento = new DateTime(1990, 05, 14),
+                    IdUsuario = 1,
+                    Correo = "mijael888@gmail.com",
+                    Direccion = "ate",
+                    NumeroDocumento = "1451897",
+                    TipoDocumento = "DNI",
+                    Telefono = "123456",
+                    Sexo = "M"
+                },
+                new Paciente
+                {
+                    Id = 7,
+                    Nombre = "Nombre Paciente 7",
+                    FechaNacimiento = new DateTime(1990, 05, 14),
+                    IdUsuario = 1,
+                    Correo = "mijael888@gmail.com",
+                    Direccion = "ate",
+                    NumeroDocumento = "1451897",
+                    TipoDocumento = "DNI",
+                    Telefono = "123456",
+                    Sexo = "M"
+                },
+                new Paciente
+                {
+                    Id = 8,
+                    Nombre = "Nombre Paciente 8",
+                    FechaNacimiento = new DateTime(1990, 05, 14),
+                    IdUsuario = 1,
+                    Correo = "mijael888@gmail.com",
+                    Direccion = "ate",
+                    NumeroDocumento = "1451897",
+                    TipoDocumento = "DNI",
+                    Telefono = "123456",
+                    Sexo = "M"
+                },
+                new Paciente
+                {
+                    Id = 9,
+                    Nombre = "Nombre paciente 9",
+                    FechaNacimiento = new DateTime(1990, 05, 14),
+                    IdUsuario = 1,
+                    Correo = "mijael888@gmail.com",
+                    Direccion = "ate",
+                    NumeroDocumento = "1451897",
+                    TipoDocumento = "DNI",
+                    Telefono = "123456",
+                    Sexo = "M"
+                },
+                new Paciente
+                {
+                    Id = 10,
+                    Nombre = "Nombre Paciente 10",
+                    FechaNacimiento = new DateTime(1990, 05, 14),
+                    IdUsuario = 1,
+                    Correo = "mijael888@gmail.com",
+                    Direccion = "ate",
+                    NumeroDocumento = "1451897",
+                    TipoDocumento = "DNI",
+                    Telefono = "123456",
+                    Sexo = "M"
                 }
             );
 
@@ -617,6 +682,71 @@ namespace ClinicaData.Migrations
                     Peso = "55 Kg",
                     Talla = "1.70 Mts",
                     IdNivelCriticidad = 2
+                },
+                new HistoriaClinica
+                {
+                    Id = 6,
+                    IdDiagnostico = 1,
+                    IdTratamiento = 1,
+                    IdPaciente = 6,
+                    FechaRegistro = DateTime.Now,
+                    Observacion = "Observaciones de la historia clinica 6",
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 2
+                },
+                new HistoriaClinica
+                {
+                    Id = 7,
+                    IdDiagnostico = 1,
+                    IdTratamiento = 3,
+                    IdPaciente = 7,
+                    FechaRegistro = DateTime.Now,
+                    Observacion = "Observaciones de la historia clinica 7",
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 1
+                },
+                new HistoriaClinica
+                {
+                    Id = 8,
+                    IdDiagnostico = 2,
+                    IdTratamiento = 2,
+                    IdPaciente = 8,
+                    FechaRegistro = DateTime.Now,
+                    Observacion = "Observaciones de la historia clinica 8",
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 2
+                },
+                new HistoriaClinica
+                {
+                    Id = 9,
+                    IdDiagnostico = 3,
+                    IdTratamiento = 3,
+                    IdPaciente = 9,
+                    FechaRegistro = DateTime.Now,
+                    Observacion = "Observaciones de la historia clinica 9",
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 3
+                },
+                new HistoriaClinica
+                {
+                    Id = 10,
+                    IdDiagnostico = 4,
+                    IdTratamiento = 4,
+                    IdPaciente = 10,
+                    FechaRegistro = DateTime.Now,
+                    Observacion = "Observaciones de la historia clinica 10",
+                    GrupoSangineo = "A+",
+                    Peso = "55 Kg",
+                    Talla = "1.70 Mts",
+                    IdNivelCriticidad = 3
                 }
             );
 
@@ -662,6 +792,51 @@ namespace ClinicaData.Migrations
                     Id = 5,
                     IdEmpleado = 1,
                     IdHistoriaClinica = 5,
+                    FechaRegistro = DateTime.Now.AddDays(-1),
+                    Observacion = "Observación de la solicitud de ingreso UCI",
+                    Estado = EstadoSolicitud.Pendiente
+                },
+                new Solicitud
+                {
+                    Id = 6,
+                    IdEmpleado = 1,
+                    IdHistoriaClinica = 6,
+                    FechaRegistro = DateTime.Now.AddDays(-1),
+                    Observacion = "Observación de la solicitud de ingreso UCI",
+                    Estado = EstadoSolicitud.Pendiente
+                },
+                new Solicitud
+                {
+                    Id = 7,
+                    IdEmpleado = 2,
+                    IdHistoriaClinica = 7,
+                    FechaRegistro = DateTime.Now.AddDays(-1),
+                    Observacion = "Observación de la solicitud de ingreso UCI",
+                    Estado = EstadoSolicitud.Pendiente
+                },
+                new Solicitud
+                {
+                    Id = 8,
+                    IdEmpleado = 1,
+                    IdHistoriaClinica = 8,
+                    FechaRegistro = DateTime.Now.AddDays(-1),
+                    Observacion = "Observación de la solicitud de ingreso UCI",
+                    Estado = EstadoSolicitud.Pendiente
+                },
+                new Solicitud
+                {
+                    Id = 9,
+                    IdEmpleado = 2,
+                    IdHistoriaClinica = 9,
+                    FechaRegistro = DateTime.Now.AddDays(-1),
+                    Observacion = "Observación de la solicitud de ingreso UCI",
+                    Estado = EstadoSolicitud.Pendiente
+                },
+                new Solicitud
+                {
+                    Id = 10,
+                    IdEmpleado = 1,
+                    IdHistoriaClinica = 10,
                     FechaRegistro = DateTime.Now.AddDays(-1),
                     Observacion = "Observación de la solicitud de ingreso UCI",
                     Estado = EstadoSolicitud.Pendiente
