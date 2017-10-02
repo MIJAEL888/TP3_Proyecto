@@ -50,6 +50,8 @@
     <Compile Include="Especialidad.cs" />
     <Compile Include="FactorRiesgo.cs" />
     <Compile Include="FactorRiesgoCriticidad.cs" />
+    <Compile Include="InterconsultaBody.cs" />
+    <Compile Include="InterconsultaHead.cs" />
     <Compile Include="NivelCriticidad.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Doctor.cs" />
