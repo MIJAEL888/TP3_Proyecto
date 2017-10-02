@@ -2010,11 +2010,11 @@
     <Content Include="Views\RegistroIngreso\Index.cshtml" />
     <Content Include="Views\DiagnosticoGravedad\Nuevo.cshtml" />
     <Content Include="Views\DiagnosticoGravedad\Detalle.cshtml" />
+    <Content Include="Views\Interconsulta\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Interconsulta\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
