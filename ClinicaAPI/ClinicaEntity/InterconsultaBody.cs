@@ -13,8 +13,11 @@ namespace ClinicaEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idInterconsultaDet { get; set; }
-        public int idInterconsulta { get; set; }
+        public int IdInterconsultaDet { get; set; }
+
+        [ForeignKey("T_INTERCONSULTA_UCI_CABECERA")]
+        public int IdInterconsulta { get; set; }
+
         public string txtDetalle { get; set; }
         public DateTime dtFecha { get; set; }
 
