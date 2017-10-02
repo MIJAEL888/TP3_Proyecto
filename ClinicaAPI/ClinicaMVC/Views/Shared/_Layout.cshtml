@@ -235,9 +235,9 @@
                     <!-- Optionally, you can add icons to the links -->
                     @if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Doctor)
                     {
-                        <li class="active"><a href="@Url.Action("Index", "Solicitud")"><i class="fa fa-link"></i> <span> Solicitudes UCI </span></a></li>
-                        <li class="active"><a href="@Url.Action("Index", "DiagnosticoGravedad")"><i class="fa fa-link"></i> <span> Diagnóstico Gravedad </span></a></li>
-                        <li class="active"><a href="@Url.Action("Index", "Reporte")"><i class="fa fa-link"></i> <span> Reporte Cubo </span></a></li>
+                        <li><a href="@Url.Action("Index", "Solicitud")"><i class="fa fa-link"></i> <span> Solicitudes UCI </span></a></li>
+                        <li><a href="@Url.Action("Index", "DiagnosticoGravedad")"><i class="fa fa-link"></i> <span> Diagnóstico Gravedad </span></a></li>
+                        <li><a href="@Url.Action("Index", "Reporte")"><i class="fa fa-link"></i> <span> Reporte Cubo </span></a></li>
                     }
                     else if (usuario.RolUsuario.Codigo == Constantes.CodigoRoles.Enfermera)
                     {

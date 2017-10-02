@@ -111,5 +111,36 @@ namespace ClinicaBussines
             }
             return factoresPadre;
         }
+
+        public List<FactorRiesgo> ListByCriticidad(int idRegistroIngreso, int cantidad)
+        {
+            var enfermeriaDetalles = _registroEnfermeriaDetalleBl.List(idRegistroIngreso);
+            var factoresPadre = List(0);
+            foreach (var factor in factoresPadre)
+            {
+                factor.IdRegistroIngreso = idRegistroIngreso;
+                factor.FactorRiesgosHijos = new List<FactorRiesgo>();
+                var factoresHijo = List(factor.Id);
+                foreach (var factorHijo in factoresHijo)
+                {
+                    if (cantidad != 0)
+                        factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id)
+                                                          .Select(c => c.IdNivelCriticidad).Reverse().Take(cantidad).ToList();
+                    else factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id)
+                        .Select(c => c.IdNivelCriticidad).Reverse().ToList();
+
+                    factor.FactorRiesgosHijos.Add(factorHijo);
+                }
+                if (cantidad != 0)
+                    factor.RegistroEnfermerias = enfermeriaDetalles.GroupBy(item => item.IdRegistroEnfermeria)
+                        .Select(group => group.First().RegistroEnfermeria).Reverse().Take(cantidad)
+                        .ToList();
+                else
+                    factor.RegistroEnfermerias = enfermeriaDetalles.GroupBy(item => item.IdRegistroEnfermeria)
+                        .Select(group => group.First().RegistroEnfermeria).Reverse()
+                        .ToList();
+            }
+            return factoresPadre;
+        }
     }
 }

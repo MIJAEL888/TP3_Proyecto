@@ -3,10 +3,12 @@
 
 @if (Model.Camas.Count > 0)
 {
+    <form id="formSolicitud">
     <div class="form-group">
         <label>Seleccione la cama que sera asignada: </label>
         @Html.DropDownListFor(model => model.idCama, new SelectList(Model.Camas, "Id", "Descripcion"), "-- Seleccione la Cama --", new {@class = "form-control"})
     </div>
+    </form>
 }
 else
 {

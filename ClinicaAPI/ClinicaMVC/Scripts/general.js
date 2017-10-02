@@ -23,6 +23,9 @@
     $.validator.addMethod("requerido", function (value, element) {
         return value !== "";
     }, "Por favor ingrese una fecha valida.");
+    $.validator.addMethod("requerido2", function (value, element) {
+        return value !== "";
+    }, "Por favor ingrese alguna descripción.");
 
     $("#formCita").validate({
         rules: {
@@ -109,6 +112,12 @@ function BuscarCama(idSolicitud) {
         .done(function (data) {
             $("#modalAprobar").find('.modal-body').html(data);
             $("#modalAprobar").modal('show');
+            var form = $("#formSolicitud");
+            form.validate({
+                rules: {
+                    idCama: { validCustomer: true }
+                }
+            });
         })
         .fail(function (data) {
             toastr.error(data);
@@ -135,21 +144,23 @@ function anularCita() {
 }
 
 function AprobarSolicitud() {
-    $.ajax({
-            url: "/Solicitud/Aprobar",
-            method: "post",
-            data: {
-                idSolicitud: $("#IdCitaAnular").val(),
-                idCama: $("#IdCitaAnular").val()
-            }
-        })
-        .done(function (data) {
-            toastr.success(data);
-            location.reload();
-        })
-        .fail(function (data) {
-            toastr.error(data);
-        });
+    if ($("#formSolicitud").valid()) {
+        $.ajax({
+                url: "/Solicitud/Aprobar",
+                method: "post",
+                data: {
+                    idSolicitud: $("#IdCitaAnular").val(),
+                    idCama: $("#idCama").val()
+                }
+            })
+            .done(function (data) {
+                toastr.success(data);
+                location.reload();
+            })
+            .fail(function (data) {
+                toastr.error(data);
+            });
+    }
 }
 function reservarCita(idTurno) {
     toastr.success("Seleccion " + idTurno);
@@ -205,6 +216,88 @@ function EnviarFormularioRegEnf() {
 
 function ValidateFormRegEnfermeria() {
     $("#formRegistroEnfermeria").validate({
+        rules : {
+            HrmTemperatura: {
+                required: true,
+                range: [20, 45]
+            },
+            HrmRitmoCard: {
+                required: true,
+                range: [1, 20]
+            },
+            HrmPsPd: {
+                required: true,
+                range: [1, 20]
+            },
+            HrmPcmPap: {
+                required: true,
+                range: [1, 20]
+            },
+            HrmPam: {
+                required: true,
+                range: [1, 20]
+            },
+            HrmGcIc: {
+                required: true,
+                range: [1, 20]
+            },
+            RespModalidad: {
+                required: true,
+                range: [1, 4]
+            },
+            RespVc: {
+                required: true,
+                range: [1, 20]
+            },
+            RespFr: {
+                required: true,
+                range: [1, 20]
+            },
+            RespPeeps: {
+                required: true,
+                range: [1, 20]
+            },
+            RespFio2: {
+                required: true,
+                range: [1, 20]
+            },
+            RespSatO2: {
+                required: true,
+                range: [1, 20]
+            },
+            NeuroPupila: {
+                required: true,
+                range: [1, 4]
+            },
+            NeuroEstadoConc: {
+                required: true,
+                range: [1, 4]
+            },
+            NeuroGlosgow: {
+                required: true,
+                range: [1, 20]
+            },
+            NeuroRamsay: {
+                required: true,
+                range: [1, 20]
+            },
+            NeuroMotSd: {
+                required: true,
+                range: [1, 20]
+            },
+            NeuroMotSi: {
+                required: true,
+                range: [1, 20]
+            },
+            HidriIngresos: {
+                required: true,
+                range: [1, 20]
+            },
+            HidriEgresos: {
+                required: true,
+                range: [1, 20]
+            }
+        },
         submitHandler: function (form) {
            
             $.ajax({
@@ -349,57 +442,145 @@ function NuevoDiagnostico(idRegistroIngreso) {
     .done(function (data) {
         $("#content-form-diag").html(data);
         $("#modalNuevoDiagnostico").modal('show');
-        CreateChart(idRegistroIngreso);
-            ValidateFormDiagnostico();
-        })
+        CreateChart(idRegistroIngreso, $("#cantidadRegistros").val());
+        ValidateFormDiagnostico();
+    })
     .fail(function (data) {
         toastr.error(data);
     });
 }
-
-function CreateChart(idRegistroIngreso) {
+function ActualizarChart(event) {
+    event.preventDefault();
+    CreateChart($("#IdIngresoSalidaPaciente").val(), $("#cantidadRegistros").val());
+    return false;
+}
+function CreateChart(idRegistroIngreso, cantidad) {
+    if (cantidad === undefined || cantidad === "") cantidad = 0;
     for (var i = 0; i < 4; i++) {
         $("#content-chart" + i).remove();
     }
     $.ajax({
-        url: "/DiagnosticoGravedad/GetValuesCriticidad",
+        url: "/DiagnosticoGravedad/GetValuesCriticidad2",
         method: "post",
         data: {
-            idRegistroIngreso: idRegistroIngreso
+            idRegistroIngreso : idRegistroIngreso,
+            cantidad : cantidad
         }
     })
     .done(function (data) {
 
         $.each(data, function (key, value) {
             $("#content-chart").clone().prop('id', 'content-chart' + key).addClass("margin-bottom").insertBefore("#content-chart");
-            Highcharts.chart('content-chart' + key,
-                {
-                    chart: {
-                        type: 'column',
-
-                    },
+            Highcharts.chart('content-chart' + key, {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: "Monitreo: " + value.Nombre
+                },
+                xAxis: {
+                    categories: GetArrayCategories(value.RegistroEnfermerias),
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
                     title: {
-                        text: "Monitreo: " + value.Nombre
-                    },
-                    xAxis: {
-                        categories: GetArrayCategoriesDiag(value.FactorRiesgosHijos)
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Porcentaje de sucesos'
-                        }
-                    },
-                    legend: {
-                        reversed: true
-                    },
-                    plotOptions: {
-                        series: {
-                            stacking: 'percent'
-                        }
-                    },
-                    series: GetArrayValuesDiag(value.NivelCriticidades)
-                });
+                        text: 'Nivel de Criticidad'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>Criticidad {point.y}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: GetArrayValues(value.FactorRiesgosHijos)
+            });
+            //Highcharts.chart('content-chart' + key, {
+            //    chart: {
+            //        type: 'bar'
+            //    },
+            //    title: {
+            //        text: "Monitreo: " + value.Nombre
+            //    },
+            //    xAxis: {
+            //        categories: GetArrayCategories(value.RegistroEnfermerias),
+            //        title: {
+            //            text: null
+            //        }
+            //    },
+            //    yAxis: {
+            //        min: 0,
+            //        title: {
+            //            text: 'Resgistro',
+            //            align: 'high'
+            //        },
+            //        labels: {
+            //            overflow: 'justify'
+            //        }
+            //    },
+            //    tooltip: {
+            //        valueSuffix: ' millions'
+            //    },
+            //    plotOptions: {
+            //        bar: {
+            //            dataLabels: {
+            //                enabled: true
+            //            }
+            //        }
+            //    },
+            //    legend: {
+            //        layout: 'vertical',
+            //        align: 'right',
+            //        verticalAlign: 'top',
+            //        x: -40,
+            //        y: 80,
+            //        floating: true,
+            //        borderWidth: 1,
+            //        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            //        shadow: true
+            //    },
+            //    credits: {
+            //        enabled: false
+            //    },
+            //    series: GetArrayValues(value.FactorRiesgosHijos)
+            //});
+            //Highcharts.chart('content-chart' + key,
+            //    {
+            //        chart: {
+            //            type: 'column',
+
+            //        },
+            //        title: {
+            //            text: "Monitreo: " + value.Nombre
+            //        },
+            //        xAxis: {
+            //            categories: GetArrayCategoriesDiag(value.FactorRiesgosHijos)
+            //        },
+            //        yAxis: {
+            //            min: 0,
+            //            title: {
+            //                text: 'Porcentaje de sucesos'
+            //            }
+            //        },
+            //        legend: {
+            //            reversed: true
+            //        },
+            //        plotOptions: {
+            //            series: {
+            //                stacking: 'percent'
+            //            }
+            //        },
+            //        series: GetArrayValuesDiag(value.NivelCriticidades)
+            //    });
 
         });
 
@@ -448,6 +629,10 @@ function EnviarFormDiagnstico() {
 
 function ValidateFormDiagnostico() {
     $("#formDiagnosticoGravedad").validate({
+        rules : {
+            IdNivelCriticidad: { validCustomer: true },
+            Observacion: { requerido2: true },
+        },
         submitHandler: function (form) {
             $.ajax({
                 url: "/DiagnosticoGravedad/Save",

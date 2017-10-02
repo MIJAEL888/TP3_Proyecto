@@ -63,7 +63,13 @@ namespace ClinicaMVC.Controllers
         }
         public JsonResult GetValuesCriticidad(int idRegistroIngreso)
         {
-            return Json(_factorRiesgoBl.ListByCriticidad(idRegistroIngreso));
+            return Json(_factorRiesgoBl.ListByCriticidad(idRegistroIngreso, 5));
+        }
+
+        public JsonResult GetValuesCriticidad2(int idRegistroIngreso, int cantidad)
+        {
+            return Json(_factorRiesgoBl.ListByCriticidad(idRegistroIngreso, cantidad));
         }
     }
+
 }

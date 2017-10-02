@@ -35,7 +35,7 @@ namespace ClinicaMVC.Controllers
         {
             try
             {
-                _solicitudBl.Aprobar(idSolicitud, idCama);
+                _solicitudBl.Aprobar(idSolicitud, idCama, UsuarioData);
                 return Json("Se aprobo la solicitud");
             }
             catch (Exception e)
@@ -50,7 +50,7 @@ namespace ClinicaMVC.Controllers
         {
             try
             {
-                _solicitudBl.DesAprobar(idSolicitud);
+                _solicitudBl.DesAprobar(idSolicitud, UsuarioData);
                 return Json("Se rechazo la solicitud");
             }
             catch (Exception e)
