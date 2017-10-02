@@ -1237,561 +1237,561 @@ namespace ClinicaData.Migrations
             context.FactorRiesgoCriticidades.AddOrUpdate(d => d.Id,
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 12,
+                    ValorMinimo = 30,
+                    ValorMaximo = 35,
                     IdFactorRiesgo = 5,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 12,
-                    ValorMaximo = 25,
+                    ValorMinimo = 36,
+                    ValorMaximo = 39,
                     IdFactorRiesgo = 5,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 25,
-                    ValorMaximo = 38,
+                    ValorMinimo = 40,
+                    ValorMaximo = 41,
                     IdFactorRiesgo = 5,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 38,
-                    ValorMaximo = 100,
+                    ValorMinimo = 42,
+                    ValorMaximo = 45,
                     IdFactorRiesgo = 5,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 6,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 6,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 15,
                     IdFactorRiesgo = 6,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 6,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 7,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 7,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 7,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 7,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 8,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 8,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 8,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 8,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 9,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 9,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 9,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 9,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 10,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 10,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 10,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 10,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 1,
                     IdFactorRiesgo = 11,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 2,
+                    ValorMaximo = 2,
                     IdFactorRiesgo = 11,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 3,
+                    ValorMaximo = 3,
                     IdFactorRiesgo = 11,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 4,
+                    ValorMaximo = 4,
                     IdFactorRiesgo = 11,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 12,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 12,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 12,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 12,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 13,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 13,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 13,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 13,
                     IdNivelCriticidad = 4
                 }, 
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 14,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 14,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 14,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 14,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 15,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 16,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 15,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 15,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 15,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 16,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 16,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 16,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 16,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 1,
                     IdFactorRiesgo = 17,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 2,
+                    ValorMaximo = 2,
                     IdFactorRiesgo = 17,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 3,
+                    ValorMaximo = 3,
                     IdFactorRiesgo = 17,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 4,
+                    ValorMaximo = 4,
                     IdFactorRiesgo = 17,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 1,
                     IdFactorRiesgo = 18,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 2,
+                    ValorMaximo = 2,
                     IdFactorRiesgo = 18,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 3,
+                    ValorMaximo = 3,
                     IdFactorRiesgo = 18,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 4,
+                    ValorMaximo = 4,
                     IdFactorRiesgo = 18,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 19,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 19,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 19,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 19,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 20,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 20,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 20,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 20,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 21,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 21,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 21,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 21,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 22,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 22,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 22,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 22,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 23,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 23,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 23,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 23,
                     IdNivelCriticidad = 4
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = -20,
-                    ValorMaximo = 10,
+                    ValorMinimo = 1,
+                    ValorMaximo = 6,
                     IdFactorRiesgo = 24,
                     IdNivelCriticidad = 1
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 10,
-                    ValorMaximo = 30,
+                    ValorMinimo = 6,
+                    ValorMaximo = 11,
                     IdFactorRiesgo = 24,
                     IdNivelCriticidad = 2
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 30,
-                    ValorMaximo = 50,
+                    ValorMinimo = 11,
+                    ValorMaximo = 16,
                     IdFactorRiesgo = 24,
                     IdNivelCriticidad = 3
                 },
                 new FactorRiesgoCriticidad
                 {
-                    ValorMinimo = 50,
-                    ValorMaximo = 100,
+                    ValorMinimo = 16,
+                    ValorMaximo = 21,
                     IdFactorRiesgo = 24,
                     IdNivelCriticidad = 4
                 }
