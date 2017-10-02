@@ -27,9 +27,9 @@ namespace ClinicaEntity
         public char Estado { get; set; }
 
         
-        [ForeignKey("HistoriaClinica")]
-        public int idHistoriaClinica { get; set; }
-        public HistoriaClinica HistoriaClinica { get; set; }
+        [ForeignKey("Paciente")]
+        public int IdPaciente { get; set; }
+        public Paciente Paciente { get; set; }
 
 
 
