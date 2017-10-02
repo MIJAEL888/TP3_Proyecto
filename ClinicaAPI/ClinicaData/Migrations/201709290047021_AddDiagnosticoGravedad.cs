@@ -29,7 +29,7 @@ namespace ClinicaData.Migrations
                 .Index(t => t.IdEmpleado)
                 .Index(t => t.IdIngresoSalidaPaciente);
             
-            AddColumn("dbo.Usuario", "IdEmpleado", c => c.Int(nullable: false));
+            AddColumn("dbo.Usuario", "IdEmpleado", c => c.Int(nullable: true));
             CreateIndex("dbo.Usuario", "IdEmpleado");
             AddForeignKey("dbo.Usuario", "IdEmpleado", "dbo.Empleado", "Id", cascadeDelete: false);
             DropColumn("dbo.Usuario", "IdPersona");

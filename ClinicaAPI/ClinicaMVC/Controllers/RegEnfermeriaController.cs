@@ -15,9 +15,9 @@ namespace ClinicaMVC.Controllers
     [SessionFilter]
     public class RegEnfermeriaController : BaseController
     {
-        readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
-        readonly RegistroEnfermeriaBl _registroEnfermeriaBl = RegistroEnfermeriaBl.Instance;
-        readonly FactorRiesgoBl _factorRiesgoBl = FactorRiesgoBl.Instance;
+        private readonly RegistroIngresoBl _registroIngresoBl = RegistroIngresoBl.Instance;
+        private readonly RegistroEnfermeriaBl _registroEnfermeriaBl = RegistroEnfermeriaBl.Instance;
+        private readonly FactorRiesgoBl _factorRiesgoBl = FactorRiesgoBl.Instance;
         //readonly RegistroEnfermeriaDetalleBl _registroEnfermeriaDetalleBl = RegistroEnfermeriaDetalleBl.Instance;
 
         // GET: RegEnfermeria
@@ -38,28 +38,28 @@ namespace ClinicaMVC.Controllers
             RegEnfermeriaViewModel model = new RegEnfermeriaViewModel
             {
                 IngresoSalidaPaciente = _registroIngresoBl.Get(idRegistroIngreso),
-                HrmTemperatura = rnd.Next(0, 70),
-                HrmRitmoCard = rnd.Next(0, 100),
-                HrmPsPd = rnd.Next(0, 100),
-                HrmPcmPap = rnd.Next(0, 100),
-                HrmPam = rnd.Next(0, 100),
-                HrmGcIc = rnd.Next(0, 100),
-                RespModalidad = rnd.Next(0, 100),
-                RespVc = rnd.Next(0, 100),
-                RespFr = rnd.Next(0, 100),
-                RespPeeps = rnd.Next(0, 100),
-                RespFio2 = rnd.Next(0, 100),
-                RespSatO2 = rnd.Next(0, 100),
-                NeuroPupila = rnd.Next(0, 100),
-                NeuroEstadoConc = rnd.Next(0, 100),
-                NeuroGlosgow = rnd.Next(0, 100),
-                NeuroRamsay = rnd.Next(0, 100),
-                NeuroMotSd = rnd.Next(0, 100),
-                NeuroMotSi = rnd.Next(0, 100),
-                HidriIngresos = rnd.Next(0, 100),
-                HidriEgresos = rnd.Next(0, 100)
+                HrmTemperatura = rnd.Next(30, 45),
+                HrmRitmoCard = rnd.Next(1, 20),
+                HrmPsPd = rnd.Next(1, 20),
+                HrmPcmPap = rnd.Next(1, 20),
+                HrmPam = rnd.Next(1, 20),
+                HrmGcIc = rnd.Next(1, 20),
+                RespModalidad = rnd.Next(1, 4),
+                RespVc = rnd.Next(1, 20),
+                RespFr = rnd.Next(1, 20),
+                RespPeeps = rnd.Next(1, 20),
+                RespFio2 = rnd.Next(1, 20),
+                RespSatO2 = rnd.Next(1, 20),
+                NeuroPupila = rnd.Next(1, 4),
+                NeuroEstadoConc = rnd.Next(1, 4),
+                NeuroGlosgow = rnd.Next(1, 20),
+                NeuroRamsay = rnd.Next(1, 20),
+                NeuroMotSd = rnd.Next(1, 20),
+                NeuroMotSi = rnd.Next(1, 20),
+                HidriIngresos = rnd.Next(1, 20),
+                HidriEgresos = rnd.Next(1, 20),
+                IdIngresoSalidaPaciente = idRegistroIngreso
             };
-            model.IdIngresoSalidaPaciente = idRegistroIngreso;
             return PartialView(model);
         }
 
