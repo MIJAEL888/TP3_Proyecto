@@ -11,6 +11,7 @@ namespace ClinicaMVC.Models
         public List<IngresoSalidaPaciente> IngresoSalidaPacientes { get; set; }
         public IngresoSalidaPaciente IngresoSalidaPaciente { get; set; }
 
+        public RegistroEnfermeria RegistroEnfermeria { get; set; }
         public int IdIngresoSalidaPaciente { get; set; }
 
         public string Observacion { get; set; }

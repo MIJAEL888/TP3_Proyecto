@@ -77,6 +77,7 @@ namespace ClinicaBussines
                 foreach (var factorHijo in factoresHijo)
                 {
                     factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id).Select(c => c.Valor).ToList();
+                    factorHijo.IdRegistros = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id).Select(c => c.IdRegistroEnfermeria).ToList();
                     factor.FactorRiesgosHijos.Add(factorHijo);
                 }
                 factor.RegistroEnfermerias = enfermeriaDetalles.GroupBy(item => item.IdRegistroEnfermeria)
@@ -128,6 +129,9 @@ namespace ClinicaBussines
                                                           .Select(c => c.IdNivelCriticidad).Reverse().Take(cantidad).ToList();
                     else factorHijo.Values = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id)
                         .Select(c => c.IdNivelCriticidad).Reverse().ToList();
+
+                    factorHijo.IdRegistros = enfermeriaDetalles.Where(c => c.IdFactorRiesgo == factorHijo.Id)
+                        .Select(c => c.IdRegistroEnfermeria).Reverse().ToList();
 
                     factor.FactorRiesgosHijos.Add(factorHijo);
                 }

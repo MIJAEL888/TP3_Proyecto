@@ -390,7 +390,47 @@ function VerDetalleRegistro(idRegistroIngreso) {
                             shared: true,
                             crosshairs: true
                         },
-                        
+                        plotOptions: {
+                            series: {
+                                cursor: 'pointer',
+                                point: {
+                                    events: {
+                                        click: function (e) {
+                                            var idRegistro = this.idRegsitro;
+                                            $.ajax({
+                                                    url: "/RegEnfermeria/GetRegistro",
+                                                    method: "GET",
+                                                    data: {
+                                                        idRegistro: idRegistro
+                                                    }
+                                                })
+                                                .done(function (data) {
+                                                    $("#modalDetalleRegistroEnf").modal("hide");
+                                                    $("#modalNuevoRegistroEnf").find('.modal-body').html(data);
+                                                    $("#modalNuevoRegistroEnf").modal('show');
+                                                    ValidateFormRegEnfermeria();
+                                                })
+                                                .fail(function (data) {
+                                                    toastr.error(data);
+                                                });
+                                            //hs.htmlExpand(null, {
+                                            //    pageOrigin: {
+                                            //        x: e.pageX || e.clientX,
+                                            //        y: e.pageY || e.clientY
+                                            //    },
+                                            //    headingText: this.series.name,
+                                            //    maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                                            //        this.y + ' visits',
+                                            //    width: 200
+                                            //});
+                                        }
+                                    }
+                                },
+                                marker: {
+                                    lineWidth: 1
+                                }
+                            }
+                        },
                         //plotOptions: {
                         //    series: {
                         //        pointStart: 1
@@ -414,7 +454,15 @@ function GetArrayValues(series) {
 
         var item = {};
         item["name"] = value.Codigo;
-        item["data"] = value.Values;
+        item["data"] = [];
+
+        $.each(value.Values, function(key2, value2) {
+            var subItem = {};
+            subItem["y"] = value2;
+            subItem["idRegsitro"] = value.IdRegistros[key2];
+            item["data"].push(subItem);
+        });
+
         jsonObj.push(item);
     });
     return jsonObj;

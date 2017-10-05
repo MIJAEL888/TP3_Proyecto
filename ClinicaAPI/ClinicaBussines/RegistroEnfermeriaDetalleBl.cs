@@ -40,6 +40,20 @@ namespace ClinicaBussines
                 context.SaveChanges();
             }
         }
+        public RegistroEnfermeriaDetalle Get(int idRegistro, string codigoFactor)
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from i in context.RegistroEnfermeriaDetalles
+                        join f in context.FactorRiesgos on i.IdFactorRiesgo equals f.Id
+                        join n in context.NivelCriticidades on i.IdNivelCriticidad equals  n.Id
+                        select i)
+                    .Include(c => c.FactorRiesgo)
+                    .Include(c => c.NivelCriticidad)
+                    .SingleOrDefault(c => c.IdRegistroEnfermeria == idRegistro && c.FactorRiesgo.Codigo.Equals(codigoFactor));
+                return result;
+            }
+        }
 
         public List<RegistroEnfermeriaDetalle> List(int idRegistroIngreso)
         {

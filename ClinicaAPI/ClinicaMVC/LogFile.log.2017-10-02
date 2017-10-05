@@ -1,0 +1,47 @@
+﻿2017-10-02 10:09:18,909 INFO [16] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:10:50,096 INFO [16] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:11:33,125 INFO [15] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:12:08,733 INFO [15] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:14:14,500 INFO [15] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:17:09,943 INFO [12] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:27:57,192 INFO [26] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:31:06,440 INFO [11] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:31:55,110 INFO [12] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:32:24,492 INFO [6] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:50:43,042 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:50:57,230 INFO [6] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:52:35,325 INFO [15] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:54:20,320 INFO [9] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:54:37,690 INFO [7] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:55:29,829 INFO [7] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 10:58:37,244 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 10:59:27,694 INFO [6] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 11:25:11,829 INFO [7] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 11:52:17,953 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 13:46:32,691 INFO [15] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 13:46:34,599 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 14:09:09,846 INFO [12] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 14:12:41,485 INFO [9] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 14:15:39,188 INFO [26] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 14:15:39,325 ERROR [26] ClinicaBussines.SolicitudBl.Aprobar - Error al enviar el correo
+2017-10-02 14:25:51,183 INFO [26] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 14:30:37,705 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 14:31:27,322 INFO [7] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 15:58:49,844 INFO [6] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:12:26,936 INFO [40] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:13:59,493 INFO [46] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:14:08,752 INFO [48] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:16:49,724 INFO [49] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:16:59,096 INFO [46] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:18:50,108 INFO [53] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:18:55,108 INFO [53] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:19:00,352 INFO [52] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:19:05,284 INFO [51] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:20:59,975 INFO [57] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:22:42,857 INFO [10] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:23:59,269 INFO [16] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:27:36,391 INFO [11] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:28:01,254 INFO [5] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:29:14,095 INFO [8] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario
+2017-10-02 16:29:21,163 INFO [8] ClinicaBussines.SolicitudBl.Aprobar - Arpobar solicitud UCI
+2017-10-02 16:32:19,890 INFO [14] ClinicaBussines.UsuarioBl.Get - Validando credenciales del usuario

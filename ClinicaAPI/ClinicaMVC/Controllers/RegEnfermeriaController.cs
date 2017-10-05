@@ -63,6 +63,13 @@ namespace ClinicaMVC.Controllers
             return PartialView(model);
         }
 
+        public ActionResult GetRegistro(int idRegistro)
+        {
+            var registroEnfermeriaModel = Mapper.Map<RegistroEnfermeriaModel, RegEnfermeriaViewModel>(_registroEnfermeriaBl.GetDetails(idRegistro));
+            registroEnfermeriaModel.IngresoSalidaPaciente = _registroIngresoBl.Get(registroEnfermeriaModel.RegistroEnfermeria.IdIngresoSalidaPaciente);
+            return PartialView("Nuevo", registroEnfermeriaModel);
+        }
+
         [HttpPost]
         public ActionResult Save(RegEnfermeriaViewModel model)
         {

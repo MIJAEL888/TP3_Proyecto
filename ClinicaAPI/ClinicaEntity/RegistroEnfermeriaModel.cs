@@ -11,6 +11,7 @@ namespace ClinicaEntity
 
     public class RegistroEnfermeriaModel
     {
+        public RegistroEnfermeria RegistroEnfermeria { get; set; }
         public int IdIngresoSalidaPaciente { get; set; }
 
         public string Observacion { get; set; }

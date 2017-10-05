@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using ClinicaData;
 using ClinicaEntity;
 using ClinicaUtil;
@@ -13,6 +15,7 @@ namespace ClinicaBussines
 
         readonly FactorRiesgoCriticidadBl _factorRiesgoCriticidadBl = FactorRiesgoCriticidadBl.Instance;
         readonly FactorRiesgoBl _factorRiesgoBl = FactorRiesgoBl.Instance;
+        readonly RegistroEnfermeriaDetalleBl _registroEnfermeriaDetalleBl = RegistroEnfermeriaDetalleBl.Instance;
 
         private static volatile RegistroEnfermeriaBl _instance;
         private static readonly object SyncRoot = new Object();
@@ -45,7 +48,18 @@ namespace ClinicaBussines
             return registroEnfermeria;
         }
 
-
+        public RegistroEnfermeria Get(int idRegistro)
+        {
+            using (var context = new DataContext())
+            {
+                var result = (from i in context.RegistroEnfermerias
+                             join ri in context.IngresoSalidaPacientes  on i.IdIngresoSalidaPaciente equals ri.Id 
+                              select i)
+                    .Include(c => c.IngresoSalidaPaciente)
+                    .SingleOrDefault(c => c.Id == idRegistro);
+                return result;
+            }
+        }
 
         public int SaveDetails(RegistroEnfermeriaModel registroEnfermeriaModel)
         {
@@ -290,5 +304,33 @@ namespace ClinicaBussines
 
         }
 
+        public RegistroEnfermeriaModel GetDetails(int idRegistro)
+        {
+            RegistroEnfermeriaModel model = new RegistroEnfermeriaModel
+            {
+                RegistroEnfermeria = Get(idRegistro),
+                HrmTemperatura = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmTemperatura).Valor,
+                HrmRitmoCard = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmRitmoCard).Valor,
+                HrmPsPd = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmPsPd).Valor,
+                HrmPcmPap = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmPcmPap).Valor,
+                HrmPam = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmPam).Valor,
+                HrmGcIc = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HrmGcIc).Valor,
+                RespModalidad = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespModalidad).Valor,
+                RespVc = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespVc).Valor,
+                RespFr = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespFr).Valor,
+                RespPeeps = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespPeeps).Valor,
+                RespFio2 = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespFio2).Valor,
+                RespSatO2 = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.RespSatO2).Valor,
+                NeuroPupila = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroPupila).Valor,
+                NeuroEstadoConc = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroEstadoConc).Valor,
+                NeuroGlosgow = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroGlosgow).Valor,
+                NeuroRamsay = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroRamsay).Valor,
+                NeuroMotSd = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroMotSd).Valor,
+                NeuroMotSi = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.NeuroMotSi).Valor,
+                HidriIngresos = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HidriIngresos).Valor,
+                HidriEgresos = _registroEnfermeriaDetalleBl.Get(idRegistro, Constantes.FatoresRiesgo.HidriEgresos).Valor,
+            };
+            return model;
+        }
     }
 }
